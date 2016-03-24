@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        rootRef.addAuthStateListener(authStateListener);
+        rootRef.removeAuthStateListener(authStateListener);
     }
 
     @Override
