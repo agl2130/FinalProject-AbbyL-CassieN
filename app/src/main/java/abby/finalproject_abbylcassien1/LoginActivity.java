@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
     public void SignUp(View view) {
         String email = this.emailEditText.getText().toString();
         String password = this.passwordEditText.getText().toString();
