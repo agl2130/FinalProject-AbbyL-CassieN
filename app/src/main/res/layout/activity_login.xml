@@ -48,14 +48,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log In"
-            android:onClick="logIn" />
+            android:onClick="logIn"
+            android:background="@drawable/button" />
 
         <Button
             android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:onClick="SignUp" />
+            android:onClick="SignUp"
+            android:background="@drawable/button" />
 
     </LinearLayout>
 
