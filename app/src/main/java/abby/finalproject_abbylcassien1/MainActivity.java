@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import com.firebase.client.AuthData;
@@ -75,5 +76,23 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void random(View view) {
+        Intent intent = new Intent(this, Random.class);
+
+        startActivity(intent);
+    }
+
+    public void load(View view) {
+        Intent intent = new Intent(this, Load.class);
+
+        startActivity(intent);
+    }
+
+    public void myCloset(View view) {
+        Intent intent = new Intent(this, MyCloset.class);
+
+        startActivity(intent);
     }
 }

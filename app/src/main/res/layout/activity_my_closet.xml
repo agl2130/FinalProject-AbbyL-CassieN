@@ -39,23 +39,23 @@
                 android:layout_width="200dp"
                 android:layout_height="75dp"
                 android:layout_marginBottom="50dp"
-                android:text="Outfit of the Day"
-                android:onClick="random" />
+                android:text="Walk In"
+                android:onClick="walkIn" />
 
             <Button
                 android:background="@drawable/button"
                 android:layout_width="200dp"
                 android:layout_height="75dp"
                 android:layout_marginBottom="50dp"
-                android:text="Load"
-                android:onClick="load" />
+                android:text="Favorite"
+                android:onClick="favorite" />
 
             <Button
                 android:background="@drawable/button"
                 android:layout_width="200dp"
                 android:layout_height="75dp"
-                android:text="My Closet!"
-                android:onClick="myCloset" />
+                android:text="Suitcase"
+                android:onClick="suitcase" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
