@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText keyEditText;
     private EditText valueEditText;
-    private int input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
