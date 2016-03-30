@@ -1,5 +1,6 @@
 package abby.finalproject_abbylcassien1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,5 +20,10 @@ public class MyCloset extends AppCompatActivity {
     }
 
     public void walkIn(View view) {
+        Intent intent = new Intent(this, WalkInCloset.class);
+
+        startActivity(intent);
     }
+
+
 }

@@ -22,7 +22,8 @@
             android:name=".Random"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Load" />
-        <activity android:name=".MyCloset"></activity>
+        <activity android:name=".MyCloset" />
+        <activity android:name=".WalkInCloset" />
     </application>
 
 </manifest>
