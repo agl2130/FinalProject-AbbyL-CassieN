@@ -23,7 +23,7 @@ public class ClothesViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         this.cardView = (CardView) itemView.findViewById(R.id.card_view);
         this.nameTextView = (TextView) itemView.findViewById(R.id.name);
-        this.clothesPicImageView = (ImageView) itemView.findViewById(R.id.clothes_pic);
+    //    this.clothesPicImageView = (ImageView) itemView.findViewById(R.id.clothes_pic);
         this.context = context;
     }
 

@@ -12,4 +12,4 @@ public class Clothes {
         this.photoId = photoId;
     }
 }
-}
+

@@ -15,8 +15,7 @@
             android:layout_height="180dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:src="" />
+            android:layout_marginRight="16dp" />
 
         <TextView
             android:id="@+id/name"

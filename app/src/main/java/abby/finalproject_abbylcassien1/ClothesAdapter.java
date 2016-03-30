@@ -22,7 +22,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
 
     @Override
     public ClothesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_clothes, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_clothes_card_view, parent, false);
         return new ClothesViewHolder(view, context);
 
     }
@@ -44,5 +44,3 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
 
 }
 
-
-}
