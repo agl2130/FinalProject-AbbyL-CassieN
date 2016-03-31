@@ -41,4 +41,6 @@ public class ViewAccessories extends FrameLayout {
         textView = (TextView) findViewById(R.id.text_accessories);
         textView.setText("Here are your accessories!");
     }
+
+
 }

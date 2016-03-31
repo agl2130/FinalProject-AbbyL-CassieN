@@ -10,7 +10,6 @@ import com.firebase.client.Firebase;
 
 public class Load extends AppCompatActivity {
 
-    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +22,8 @@ public class Load extends AppCompatActivity {
 
     public void importPhoto(View view) {
     }
+
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
