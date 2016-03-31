@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         valueEditText = (EditText) findViewById(R.id.edit_text_password);
 
         userName = (TextView) findViewById(R.id.userName);
-
         userName.setText(keyEditText.toString());
 
 
