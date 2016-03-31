@@ -24,7 +24,6 @@ public class MyCloset extends AppCompatActivity {
 
     public void suitcase(View view) {
     }
-//fda
 
     public void favorite(View view) {
     }

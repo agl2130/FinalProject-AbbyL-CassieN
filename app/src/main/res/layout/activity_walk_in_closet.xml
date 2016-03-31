@@ -11,6 +11,12 @@
     tools:context="abby.finalproject_abbylcassien1.MainActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="This will be a Recycler View of all the clothes in the closet." />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
