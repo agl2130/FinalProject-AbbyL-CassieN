@@ -3,14 +3,18 @@ package abby.finalproject_abbylcassien1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.firebase.client.Firebase;
 
 import abby.finalproject_abbylcassien1.walkincloset.WalkInCloset;
 
 public class MyCloset extends AppCompatActivity {
 
-//    private Firebase rootRef;
-//    rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+    //like this when it's not inside of a method
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +33,21 @@ public class MyCloset extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.log_out:
-//                rootRef.unauth();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                rootRef.unauth();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }
