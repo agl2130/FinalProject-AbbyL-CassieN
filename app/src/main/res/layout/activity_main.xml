@@ -20,8 +20,7 @@
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/userPic"
-        android:text="username" />
+        android:layout_toRightOf="@+id/userPic" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

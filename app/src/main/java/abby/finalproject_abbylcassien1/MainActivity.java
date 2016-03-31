@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Firebase rootRef;
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
+    private TextView userName;
 
     private EditText keyEditText;
     private EditText valueEditText;
@@ -26,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
         keyEditText = (EditText) findViewById(R.id.edit_text_email);
         valueEditText = (EditText) findViewById(R.id.edit_text_password);
+
+        userName = (TextView) findViewById(R.id.userName);
+
+        userName.setText(keyEditText.toString());
+
 
         //set up firebase
         Firebase.setAndroidContext(this);
