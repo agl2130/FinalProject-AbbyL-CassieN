@@ -15,13 +15,13 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <Button
+        <ImageButton
             android:id="@+id/button"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
-            android:background="@drawable/button_casual"
+            android:src="@drawable/button_casual"
             android:onClick="casual"
             />
 
