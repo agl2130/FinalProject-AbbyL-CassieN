@@ -21,10 +21,8 @@
             android:layout_height="100dp"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
-            android:background="@drawable/button"
-
+            android:background="@drawable/casual"
             android:onClick="casual"
-            android:text="Casual"
             />
 
         <Button

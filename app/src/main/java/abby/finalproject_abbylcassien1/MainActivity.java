@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         keyEditText = (EditText) findViewById(R.id.edit_text_email);
         valueEditText = (EditText) findViewById(R.id.edit_text_password);
-
-        userName = (TextView) findViewById(R.id.userName);
-        userName.setText(keyEditText.toString());
+//
+//        userName = (TextView) findViewById(R.id.userName);
+//        userName.setText(keyEditText.toString());
 
 
         //set up firebase
@@ -78,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.log_out:
                 rootRef.unauth();
-                keyEditText.setText("");
-                valueEditText.setText("");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
