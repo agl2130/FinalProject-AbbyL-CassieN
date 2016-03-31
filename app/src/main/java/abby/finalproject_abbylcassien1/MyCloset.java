@@ -9,6 +9,9 @@ import abby.finalproject_abbylcassien1.walkincloset.WalkInCloset;
 
 public class MyCloset extends AppCompatActivity {
 
+//    private Firebase rootRef;
+//    rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +26,24 @@ public class MyCloset extends AppCompatActivity {
 
     public void walkIn(View view) {
         Intent intent = new Intent(this, WalkInCloset.class);
-
         startActivity(intent);
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.log_out:
+//                rootRef.unauth();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
 }

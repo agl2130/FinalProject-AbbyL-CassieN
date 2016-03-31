@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 //
         userName = (TextView) findViewById(R.id.userName);
 
-
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
