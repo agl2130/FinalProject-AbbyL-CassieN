@@ -10,7 +10,7 @@ import abby.finalproject_abbylcassien1.R;
 /**
  * Created by cassondranealon on 3/30/16.
  */
-public class randomTabView extends AppCompatActivity {
+public class RandomTabActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
@@ -18,7 +18,7 @@ public class randomTabView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_randomtab);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);

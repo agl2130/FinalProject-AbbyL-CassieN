@@ -24,6 +24,7 @@
         <activity android:name=".Load" />
         <activity android:name=".MyCloset" />
         <activity android:name=".walkincloset.WalkInCloset" />
+        <activity android:name=".outfitoftheday.RandomTabActivity" />
     </application>
 
 </manifest>
