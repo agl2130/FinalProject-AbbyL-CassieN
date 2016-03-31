@@ -31,14 +31,16 @@ public class MainActivity extends AppCompatActivity {
         keyEditText = (EditText) findViewById(R.id.edit_text_email);
         valueEditText = (EditText) findViewById(R.id.edit_text_password);
 //
-//        userName = (TextView) findViewById(R.id.userName);
-//        userName.setText(keyEditText.toString());
-        //
+        userName = (TextView) findViewById(R.id.userName);
 
 
-        //set up firebase
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+
+
+//        if (rootRef.getAuth().getProviderData().get("email") != null) {
+//            userName.setText(rootRef.getAuth().getProviderData().get("email").toString());
+//        }
 
         //just in case the user is logged out, do something about it
         authStateListener = new Firebase.AuthStateListener() {
