@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        userName = (TextView) findViewById(R.id.userName);
 //        userName.setText(keyEditText.toString());
+        //
 
 
         //set up firebase
