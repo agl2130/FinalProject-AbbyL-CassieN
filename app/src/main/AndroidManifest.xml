@@ -19,11 +19,11 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity
-            android:name=".Random"
+            android:name=".outfitoftheday.Random"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Load" />
         <activity android:name=".MyCloset" />
-        <activity android:name=".WalkInCloset" />
+        <activity android:name=".walkincloset.WalkInCloset" />
     </application>
 
 </manifest>

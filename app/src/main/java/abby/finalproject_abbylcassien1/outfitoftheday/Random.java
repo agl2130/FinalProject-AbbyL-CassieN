@@ -1,8 +1,10 @@
-package abby.finalproject_abbylcassien1;
+package abby.finalproject_abbylcassien1.outfitoftheday;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import abby.finalproject_abbylcassien1.R;
 
 public class Random extends AppCompatActivity {
 

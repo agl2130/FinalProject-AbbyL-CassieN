@@ -21,9 +21,10 @@
             android:layout_height="100dp"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button2"
             android:onClick="casual"
-            android:text="Casual" />
+            android:text="Casual"
+            />
 
         <Button
             android:id="@+id/button2"

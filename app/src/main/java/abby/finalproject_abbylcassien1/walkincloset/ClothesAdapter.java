@@ -1,4 +1,4 @@
-package abby.finalproject_abbylcassien1;
+package abby.finalproject_abbylcassien1.walkincloset;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+
+import abby.finalproject_abbylcassien1.R;
 
 /**
  * Created by aglee on 3/29/16.

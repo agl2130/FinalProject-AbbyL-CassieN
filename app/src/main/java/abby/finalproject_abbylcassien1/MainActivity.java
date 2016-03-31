@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
+import abby.finalproject_abbylcassien1.outfitoftheday.Random;
+
 public class MainActivity extends AppCompatActivity {
     private Firebase rootRef;
     private Firebase userRef;

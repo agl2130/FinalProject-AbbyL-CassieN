@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import abby.finalproject_abbylcassien1.walkincloset.WalkInCloset;
+
 public class MyCloset extends AppCompatActivity {
 
     @Override

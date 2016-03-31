@@ -1,4 +1,4 @@
-package abby.finalproject_abbylcassien1;
+package abby.finalproject_abbylcassien1.walkincloset;
 
 /**
  * Created by aglee on 3/29/16.
