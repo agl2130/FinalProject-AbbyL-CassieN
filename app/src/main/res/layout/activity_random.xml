@@ -15,17 +15,18 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
+
         <ImageButton
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:background="@drawable/casual1"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
-            android:src="@drawable/casual1"
-            android:onClick="casual"
-            />
+            android:onClick="casual1" />
 
-        <Button
+
+        <ImageButton
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -33,24 +34,21 @@
             android:layout_alignParentTop="false"
             android:layout_alignStart="@+id/button3"
             android:layout_alignTop="@+id/button"
-            android:background="@drawable/button"
-            android:onClick="business"
-            android:text="Busine" />
+            android:background="@drawable/business3"
+            android:onClick="business" />
 
 
-        <Button
+        <ImageButton
             android:layout_width="150dp"
             android:layout_height="150dp"
-
             android:layout_alignLeft="@+id/button"
             android:layout_alignParentTop="false"
             android:layout_alignStart="@+id/button"
             android:layout_below="@+id/button"
-            android:background="@drawable/button"
-            android:onClick="nightOut"
-            android:text="Night Out" />
+            android:background="@drawable/nightout2"
+            android:onClick="nightOut" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button3"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -58,9 +56,8 @@
             android:layout_below="@+id/button"
             android:layout_toEndOf="@+id/button"
             android:layout_toRightOf="@+id/button"
-            android:background="@drawable/button"
-            android:onClick="surpriseMe"
-            android:text="Surprise Me!" />
+            android:background="@drawable/surpsriseme2"
+            android:onClick="surpriseMe" />
 
     </RelativeLayout>
 </RelativeLayout>
