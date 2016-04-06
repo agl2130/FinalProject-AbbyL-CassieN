@@ -1,12 +1,16 @@
-package abby.finalproject_abbylcassien1;
+package abby.finalproject_abbylcassien1.Load;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
+
+import abby.finalproject_abbylcassien1.R;
 
 public class Load extends AppCompatActivity {
 
@@ -18,9 +22,15 @@ public class Load extends AppCompatActivity {
     }
 
     public void takePhoto(View view) {
+        //goes to camera but for now its going to add an item
+        Intent intent = new Intent(this, AddClothes.class);
+        startActivity(intent);
+        Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
+
     }
 
     public void importPhoto(View view) {
+        //goes to my photos
     }
 
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");

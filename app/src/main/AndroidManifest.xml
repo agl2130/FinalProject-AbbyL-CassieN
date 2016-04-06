@@ -21,10 +21,11 @@
         <activity
             android:name=".outfitoftheday.Random"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Load" />
+        <activity android:name=".Load.Load" />
         <activity android:name=".MyCloset" />
         <activity android:name=".walkincloset.WalkInCloset" />
         <activity android:name=".outfitoftheday.RandomTabActivity" />
+        <activity android:name=".Load.AddClothes"></activity>
     </application>
 
 </manifest>

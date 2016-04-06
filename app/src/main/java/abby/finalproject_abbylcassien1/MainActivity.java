@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
+import abby.finalproject_abbylcassien1.Load.Load;
 import abby.finalproject_abbylcassien1.outfitoftheday.Random;
 
 public class MainActivity extends AppCompatActivity {

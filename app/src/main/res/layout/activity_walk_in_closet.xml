@@ -10,16 +10,71 @@
     android:background="@android:color/black"
     tools:context="abby.finalproject_abbylcassien1.MainActivity">
 
-
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="This will be a Recycler View of all the clothes in the closet." />
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="TOPs"
+                android:onClick="top" />
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="Bottoms"
+                android:onClick="bottom" />
+
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="Shoes"
+                android:onClick="shoes" />
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="Accessories"
+                android:onClick="access" />
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="Jackets"
+                android:onClick="jacket" />
+
+            <Button
+                android:background="@drawable/button"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:text="Other"
+                android:onClick="other" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:text="This will be a Recycler View of all the clothes in the closet." />-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recycler_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
 
 </RelativeLayout>

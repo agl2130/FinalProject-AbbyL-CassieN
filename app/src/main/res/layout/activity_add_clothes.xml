@@ -64,6 +64,7 @@
         android:text="Type: " />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxTop"
         android:layout_below="@+id/clothesInfo"
@@ -73,6 +74,7 @@
         android:text="Top" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxBottom"
         android:layout_below="@+id/clothesInfo"
@@ -83,6 +85,7 @@
 
     <CheckBox
         android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
         android:id="@+id/checkboxShoes"
         android:layout_below="@+id/clothesInfo"
         android:layout_toRightOf="@+id/checkboxBottom"
@@ -92,6 +95,7 @@
 
     <CheckBox
         android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
         android:id="@+id/checkboxAccessories"
         android:layout_below="@+id/clothesInfo"
         android:layout_toRightOf="@+id/checkboxShoes"
@@ -100,6 +104,7 @@
         android:text="Accessories" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxJackets"
         android:layout_marginBottom="10dp"
@@ -120,6 +125,7 @@
 
     <TextView
         android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
         android:layout_marginBottom="10dp"
         android:id="@+id/occasion"
         android:layout_width="wrap_content"
@@ -129,6 +135,7 @@
 
     <CheckBox
         android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
         android:layout_marginBottom="10dp"
         android:id="@+id/checkboxCasual"
         android:layout_below="@+id/checkboxJackets"
@@ -138,6 +145,7 @@
         android:text="Casual" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxBusiness"
         android:layout_below="@+id/checkboxJackets"
@@ -148,6 +156,7 @@
 
     <CheckBox
         android:textColor="@android:color/white"
+        android:buttonTint="@android:color/white"
         android:id="@+id/checkboxNightOut"
         android:layout_below="@+id/checkboxJackets"
         android:layout_toRightOf="@+id/checkboxBusiness"
@@ -165,6 +174,7 @@
         android:text="Season: " />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxSpring"
         android:layout_below="@+id/checkboxCasual"
@@ -174,6 +184,7 @@
         android:text="Spring" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxSummer"
         android:layout_below="@+id/checkboxCasual"
@@ -183,6 +194,7 @@
         android:text="Summer" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxFall"
         android:layout_below="@+id/checkboxCasual"
@@ -192,6 +204,7 @@
         android:text="Fall" />
 
     <CheckBox
+        android:buttonTint="@android:color/white"
         android:textColor="@android:color/white"
         android:id="@+id/checkboxWinter"
         android:layout_below="@+id/checkboxCasual"
