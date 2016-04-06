@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
     private TextView userName;
-
     private EditText keyEditText;
     private EditText valueEditText;
 

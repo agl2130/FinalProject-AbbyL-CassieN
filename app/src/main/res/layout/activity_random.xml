@@ -23,7 +23,7 @@
             android:background="@drawable/casual1"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
-            android:onClick="casual1" />
+            android:onClick="casual" />
 
 
         <ImageButton
