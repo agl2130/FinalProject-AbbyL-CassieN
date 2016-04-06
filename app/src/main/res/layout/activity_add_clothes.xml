@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Load.AddClothes">
+
+    <ImageView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/addedImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/quote"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:textColor="@android:color/white"
+
+        android:id="@+id/clothesName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addedImage"
+        android:text="Name: "
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:id="@+id/clothesEditName"
+        android:layout_toRightOf="@+id/clothesName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addedImage"
+
+        />
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:id="@+id/clothesInfo"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clothesName"
+        android:text="Info: " />
+
+    <EditText
+        android:textColor="@android:color/white"
+        android:id="@+id/clothesEditInfo"
+        android:layout_toRightOf="@+id/clothesInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addedImage" />
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clothesInfo"
+        android:text="Type: " />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxTop"
+        android:layout_below="@+id/clothesInfo"
+        android:layout_toRightOf="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxBottom"
+        android:layout_below="@+id/clothesInfo"
+        android:layout_toRightOf="@+id/checkboxTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxShoes"
+        android:layout_below="@+id/clothesInfo"
+        android:layout_toRightOf="@+id/checkboxBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shoes" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxAccessories"
+        android:layout_below="@+id/clothesInfo"
+        android:layout_toRightOf="@+id/checkboxShoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accessories" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxJackets"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/checkboxTop"
+        android:layout_toRightOf="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jackets" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxOthers"
+        android:layout_below="@+id/checkboxTop"
+        android:layout_toRightOf="@+id/checkboxJackets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Others" />
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/occasion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkboxJackets"
+        android:text="Occasion: " />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/checkboxCasual"
+        android:layout_below="@+id/checkboxJackets"
+        android:layout_toRightOf="@+id/occasion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Casual" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxBusiness"
+        android:layout_below="@+id/checkboxJackets"
+        android:layout_toRightOf="@+id/checkboxCasual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxNightOut"
+        android:layout_below="@+id/checkboxJackets"
+        android:layout_toRightOf="@+id/checkboxBusiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Night Out" />
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:id="@+id/season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/occasion"
+        android:text="Season: " />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxSpring"
+        android:layout_below="@+id/checkboxCasual"
+        android:layout_toRightOf="@+id/season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spring" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxSummer"
+        android:layout_below="@+id/checkboxCasual"
+        android:layout_toRightOf="@+id/checkboxSpring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Summer" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxFall"
+        android:layout_below="@+id/checkboxCasual"
+        android:layout_toRightOf="@+id/checkboxSummer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fall" />
+
+    <CheckBox
+        android:textColor="@android:color/white"
+        android:id="@+id/checkboxWinter"
+        android:layout_below="@+id/checkboxCasual"
+        android:layout_toRightOf="@+id/checkboxFall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Winter" />
+
+
+</RelativeLayout>
