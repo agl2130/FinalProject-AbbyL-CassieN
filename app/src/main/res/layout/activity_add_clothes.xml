@@ -13,8 +13,8 @@
     <ImageView
         android:layout_marginBottom="10dp"
         android:id="@+id/addedImage"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/quote"
         android:layout_centerHorizontal="true" />
 
@@ -212,6 +212,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Winter" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:layout_below="@+id/checkboxWinter"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:text="Add to Closet"
+        android:onClick="addToCloset" />
 
 
 </RelativeLayout>
