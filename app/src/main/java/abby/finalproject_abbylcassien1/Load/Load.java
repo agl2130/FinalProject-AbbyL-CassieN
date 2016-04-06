@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
+import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
 
 public class Load extends AppCompatActivity {
@@ -41,9 +42,14 @@ public class Load extends AppCompatActivity {
         return true;
     }
 
+    //copy this to all the pages...
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            //this takes you back to home, but it makes you log back in!!!!!
+            case R.id.home:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             case R.id.log_out:
                 rootRef.unauth();
                 return true;
