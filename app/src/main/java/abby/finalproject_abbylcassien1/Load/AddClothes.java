@@ -52,6 +52,7 @@ public class AddClothes extends AppCompatActivity {
     public void addToCloset(View view) {
         Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString());
         userRef.child("cities").push().setValue(clothing);
+        finish();
     }
 
     @Override

@@ -7,19 +7,36 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 import abby.finalproject_abbylcassien1.walkincloset.WalkInCloset;
 
 public class MyCloset extends AppCompatActivity {
-
-    //like this when it's not inside of a method
-    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+    private Firebase rootRef;
+    private Firebase userRef;
+    private Firebase.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_closet);
+
+        Firebase.setAndroidContext(this);
+        rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+        authStateListener = new Firebase.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(AuthData authData) {
+                if (authData != null) {
+                    //user information and their id numbers
+                    userRef = rootRef.child("users/" + authData.getUid());
+                } else {
+                    //otherwise...sorry you have to log in before you can come back
+                    Intent intent = new Intent(MyCloset.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
     }
 
     public void suitcase(View view) {
@@ -31,6 +48,18 @@ public class MyCloset extends AppCompatActivity {
     public void walkIn(View view) {
         Intent intent = new Intent(this, WalkInCloset.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        rootRef.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        rootRef.removeAuthStateListener(authStateListener);
     }
 
     @Override
@@ -49,5 +78,4 @@ public class MyCloset extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
