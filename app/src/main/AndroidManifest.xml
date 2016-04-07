@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,11 +24,22 @@
         <activity
             android:name=".outfitoftheday.Random"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Load.Load" />
-        <activity android:name=".MyCloset" />
-        <activity android:name=".walkincloset.WalkInCloset" />
-        <activity android:name=".outfitoftheday.RandomTabActivity" />
-        <activity android:name=".Load.AddClothes"></activity>
+        <activity
+            android:name=".Load.Load"
+            android:icon="@android:drawable/ic_menu_call"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MyCloset"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".walkincloset.WalkInCloset"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".outfitoftheday.RandomTabActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Load.AddClothes"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
