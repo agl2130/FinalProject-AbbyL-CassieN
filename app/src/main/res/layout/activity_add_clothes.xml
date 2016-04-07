@@ -53,7 +53,7 @@
         android:layout_toRightOf="@+id/clothesInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addedImage" />
+        android:layout_below="@+id/clothesName" />
 
     <TextView
         android:textColor="@android:color/white"
