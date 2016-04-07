@@ -8,6 +8,7 @@ public class Clothing {
     public String name;
     public String info;
     //  public String type;
+    //public String occasion;
 
     private Clothing() {
     }
@@ -16,5 +17,6 @@ public class Clothing {
         this.name = name;
         this.info = info;
         //    this.type = type;
+        //this.occasion=occasion;
     }
 }
