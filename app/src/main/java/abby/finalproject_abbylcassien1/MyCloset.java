@@ -21,6 +21,7 @@ public class MyCloset extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_closet);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");

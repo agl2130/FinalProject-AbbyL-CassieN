@@ -20,24 +20,7 @@ public class WalkInCloset extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walk_in_closet);
-
-//        initialData();
-//
-//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        clothesAdapter = new ClothesAdapter(clothes, this);
-//        recyclerView.setAdapter(clothesAdapter);
-//
-//    }
-//
-//    private void initialData() {
-//        clothes = new ArrayList<>();
-//        clothes.add(new Clothes("TOPS", "", R.drawable.quote));
-//        clothes.add(new Clothes("BOTTOMS", "", R.drawable.quote));
-//        clothes.add(new Clothes("SHOES", "", R.drawable.quote));
-//        clothes.add(new Clothes("ACCESSORIES", "", R.drawable.quote));
-//    }
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
     }
 
     public void top(View view) {

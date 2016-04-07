@@ -27,6 +27,7 @@ public class AddClothes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_clothes);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
 
         clothNameEditText = (EditText) findViewById(R.id.clothesEditName);
         clothInfoEditText = (EditText) findViewById(R.id.clothesEditInfo);

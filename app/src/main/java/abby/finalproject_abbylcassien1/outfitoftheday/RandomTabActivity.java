@@ -12,6 +12,7 @@ import abby.finalproject_abbylcassien1.R;
  */
 public class RandomTabActivity extends AppCompatActivity {
 
+
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
@@ -19,6 +20,7 @@ public class RandomTabActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_randomtab);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);

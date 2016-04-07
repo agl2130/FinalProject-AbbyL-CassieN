@@ -20,6 +20,7 @@ public class Random extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
     }
 //all are going to the same place right now
 

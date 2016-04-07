@@ -20,6 +20,8 @@ public class Load extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
+
     }
 
     public void takePhoto(View view) {
