@@ -22,6 +22,7 @@ public class AddClothes extends AppCompatActivity {
     private EditText clothNameEditText;
     private EditText clothInfoEditText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

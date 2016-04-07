@@ -164,59 +164,59 @@
         android:layout_height="wrap_content"
         android:text="Night Out" />
 
-    <TextView
-        android:textColor="@android:color/white"
-        android:layout_marginTop="10dp"
-        android:id="@+id/season"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/occasion"
-        android:text="Season: " />
+    <!--<TextView-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:id="@+id/season"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/occasion"-->
+    <!--android:text="Season: " />-->
 
-    <CheckBox
-        android:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:id="@+id/checkboxSpring"
-        android:layout_below="@+id/checkboxCasual"
-        android:layout_toRightOf="@+id/season"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spring" />
+    <!--<CheckBox-->
+    <!--android:buttonTint="@android:color/white"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:id="@+id/checkboxSpring"-->
+    <!--android:layout_below="@+id/checkboxCasual"-->
+    <!--android:layout_toRightOf="@+id/season"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Spring" />-->
 
-    <CheckBox
-        android:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:id="@+id/checkboxSummer"
-        android:layout_below="@+id/checkboxCasual"
-        android:layout_toRightOf="@+id/checkboxSpring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Summer" />
+    <!--<CheckBox-->
+    <!--android:buttonTint="@android:color/white"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:id="@+id/checkboxSummer"-->
+    <!--android:layout_below="@+id/checkboxCasual"-->
+    <!--android:layout_toRightOf="@+id/checkboxSpring"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Summer" />-->
 
-    <CheckBox
-        android:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:id="@+id/checkboxFall"
-        android:layout_below="@+id/checkboxCasual"
-        android:layout_toRightOf="@+id/checkboxSummer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fall" />
+    <!--<CheckBox-->
+    <!--android:buttonTint="@android:color/white"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:id="@+id/checkboxFall"-->
+    <!--android:layout_below="@+id/checkboxCasual"-->
+    <!--android:layout_toRightOf="@+id/checkboxSummer"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Fall" />-->
 
-    <CheckBox
-        android:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:id="@+id/checkboxWinter"
-        android:layout_below="@+id/checkboxCasual"
-        android:layout_toRightOf="@+id/checkboxFall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Winter" />
+    <!--<CheckBox-->
+    <!--android:buttonTint="@android:color/white"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:id="@+id/checkboxWinter"-->
+    <!--android:layout_below="@+id/checkboxCasual"-->
+    <!--android:layout_toRightOf="@+id/checkboxFall"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Winter" />-->
 
     <Button
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
-        android:layout_below="@+id/checkboxWinter"
+        android:layout_below="@+id/checkboxNightOut"
         android:layout_width="wrap_content"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
