@@ -88,19 +88,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void random(View view) {
         Intent intent = new Intent(this, Random.class);
-
         startActivity(intent);
     }
 
     public void load(View view) {
         Intent intent = new Intent(this, Load.class);
-
         startActivity(intent);
     }
 
     public void myCloset(View view) {
         Intent intent = new Intent(this, MyCloset.class);
-
         startActivity(intent);
     }
 }
