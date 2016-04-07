@@ -7,13 +7,14 @@ public class Clothing {
 
     public String name;
     public String info;
+    //  public String type;
 
     private Clothing() {
-        this("", "");
     }
 
     Clothing(String name, String info) {
         this.name = name;
         this.info = info;
+        //    this.type = type;
     }
 }
