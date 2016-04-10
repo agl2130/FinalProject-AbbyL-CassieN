@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -31,6 +32,13 @@ public class AddClothes extends AppCompatActivity {
 
         clothNameEditText = (EditText) findViewById(R.id.clothesEditName);
         clothInfoEditText = (EditText) findViewById(R.id.clothesEditInfo);
+
+        Intent intent = getIntent();
+        int drawableId = intent.getIntExtra(Load.EXTRA_IMAGE, 0);
+
+        ImageView image = (ImageView) findViewById(R.id.addedImage);
+        image.setImageResource(drawableId);
+
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");

@@ -9,6 +9,7 @@ public class Clothing {
     public String info;
     //  public String type;
     //public String occasion;
+    //public photoId photo;
 
     private Clothing() {
     }
@@ -18,5 +19,6 @@ public class Clothing {
         this.info = info;
         //    this.type = type;
         //this.occasion=occasion;
+        //this.photo = photo
     }
 }
