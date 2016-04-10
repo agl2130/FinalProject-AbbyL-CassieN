@@ -60,6 +60,7 @@ public class Load extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, Request_ImportPhoto);
+        // photoFile =
     }
 
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
@@ -69,6 +70,7 @@ public class Load extends AppCompatActivity {
         if (resultCode != RESULT_OK)
             return;
         if (resultCode == Request_TakePhoto) {
+
             Intent intent2 = new Intent(this, AddClothes.class);
             intent2.putExtra(EXTRA_IMAGE, photoFile);
             startActivity(intent2);
@@ -76,6 +78,7 @@ public class Load extends AppCompatActivity {
             //           setPic();
         } else if (requestCode == Request_ImportPhoto) {
 //            try{
+
             Intent intent2 = new Intent(this, AddClothes.class);
             intent2.putExtra(EXTRA_IMAGE, photoFile);
 
