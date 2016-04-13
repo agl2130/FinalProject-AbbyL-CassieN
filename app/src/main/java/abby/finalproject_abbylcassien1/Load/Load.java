@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 import java.io.File;
+import java.net.URI;
 
 import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
@@ -68,7 +69,7 @@ public class Load extends AppCompatActivity {
         if (requestCode == Request_TakePhoto) {
 
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, photoFile.getAbsolutePath());
+            intent2.putExtra(EXTRA_IMAGE, new URI(photoFile.getAbsolutePath()));
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
             //           setPic();
