@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.firebase.client.AuthData;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 
 import abby.finalproject_abbylcassien1.LoginActivity;
@@ -23,6 +25,17 @@ public class AddClothes extends AppCompatActivity {
     private EditText clothNameEditText;
     private EditText clothInfoEditText;
 
+    private CheckBox checkboxTop;
+    private CheckBox checkboxBottom;
+    private CheckBox checkboxShoes;
+    private CheckBox checkboxAccessories;
+    private CheckBox checkboxJackets;
+    private CheckBox checkboxOthers;
+
+    private CheckBox checkboxCasual;
+    private CheckBox checkboxBusiness;
+    private CheckBox checkboxNightOut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +45,17 @@ public class AddClothes extends AppCompatActivity {
 
         clothNameEditText = (EditText) findViewById(R.id.clothesEditName);
         clothInfoEditText = (EditText) findViewById(R.id.clothesEditInfo);
+        checkboxTop = (CheckBox) findViewById(R.id.checkboxTop);
+        checkboxBottom = (CheckBox) findViewById(R.id.checkboxBottom);
+        checkboxShoes = (CheckBox) findViewById(R.id.checkboxShoes);
+        checkboxAccessories = (CheckBox) findViewById(R.id.checkboxAccessories);
+        checkboxJackets = (CheckBox) findViewById(R.id.checkboxJackets);
+        checkboxOthers = (CheckBox) findViewById(R.id.checkboxOthers);
+        checkboxCasual = (CheckBox) findViewById(R.id.checkboxCasual);
+        checkboxBusiness = (CheckBox) findViewById(R.id.checkboxBusiness);
+        checkboxNightOut = (CheckBox) findViewById(R.id.checkboxNightOut);
+
+        Clothing clothing;
 
         Intent intent = getIntent();
         int drawableId = intent.getIntExtra(Load.EXTRA_IMAGE, 0);
@@ -59,11 +83,29 @@ public class AddClothes extends AppCompatActivity {
         };
     }
 
+    boolean t = checkboxTop.isChecked();
+    boolean b = checkboxBottom.isChecked();
+    boolean s = checkboxShoes.isChecked();
+    boolean a = checkboxAccessories.isChecked();
+    boolean j = checkboxJackets.isChecked();
+    boolean o = checkboxOthers.isChecked();
+    boolean c = checkboxCasual.isChecked();
+    boolean bu = checkboxBusiness.isChecked();
+    boolean n = checkboxNightOut.isChecked();
+
+
+
     public void addToCloset(View view) {
         Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString());
         userRef.child("clothing").push().setValue(clothing);
         finish();
     }
+
+    public void onDataChange(DataSnapshot snapshot) {
+    }
+
+
+
 
     @Override
     protected void onResume() {
@@ -94,6 +136,5 @@ public class AddClothes extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
 }

@@ -27,6 +27,7 @@ public class Load extends AppCompatActivity {
 
     private ImageView imageView;
     private File photoFile;
+    private String imageFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +44,10 @@ public class Load extends AppCompatActivity {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
         startActivityForResult(intent, Request_TakePhoto);
 
-//        Intent intent2 = new Intent(this, AddClothes.class);
-//        startActivity(intent);
-//        Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
-
     }
 
     private File createImageFile() {
-        String imageFileName = "JPEG_" + System.currentTimeMillis() + ".jpg";
+        imageFileName = "JPEG_" + System.currentTimeMillis() + ".jpg";
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         return new File(storageDir.getAbsolutePath(), imageFileName);
     }
@@ -60,7 +57,6 @@ public class Load extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, Request_ImportPhoto);
-        // photoFile =
     }
 
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
@@ -72,19 +68,18 @@ public class Load extends AppCompatActivity {
         if (resultCode == Request_TakePhoto) {
 
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, photoFile);
+            intent2.putExtra(EXTRA_IMAGE, photoFile.getAbsolutePath());
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
             //           setPic();
         } else if (requestCode == Request_ImportPhoto) {
 //            try{
-
+//
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, photoFile);
-
+            intent2.putExtra(EXTRA_IMAGE, photoFile.getAbsolutePath());
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
-            //       decodeUri(data.getData());
+//                   decodeUri(data.getData());
 //            } catch (FileNotFoundException e) {
 //                e.printStackTrace();
 //            }
