@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addedImage"
-        android:text="Name: "
-        android:layout_marginBottom="10dp" />
+        android:layout_marginTop="20dp"
+        android:text="Name: " />
 
     <EditText
         android:textColor="@android:color/white"
@@ -39,11 +39,13 @@
     <TextView
         android:textColor="@android:color/white"
         android:id="@+id/clothesInfo"
-        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Info: "
         android:layout_below="@+id/clothesName"
-        android:text="Info: " />
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:textColor="@android:color/white"
