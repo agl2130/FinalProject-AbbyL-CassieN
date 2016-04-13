@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.firebase.client.Firebase;
 
 import abby.finalproject_abbylcassien1.R;
 
@@ -15,6 +19,7 @@ public class RandomTabActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +32,22 @@ public class RandomTabActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new TabPagerAdapter());
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                rootRef.unauth();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
+
 import abby.finalproject_abbylcassien1.R;
 
 /**
@@ -13,6 +15,7 @@ import abby.finalproject_abbylcassien1.R;
  */
 public class ViewAccessories extends FrameLayout {
 
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
     private TextView textView;
 
     public ViewAccessories(Context context) {
