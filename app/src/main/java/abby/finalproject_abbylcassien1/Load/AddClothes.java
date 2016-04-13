@@ -1,6 +1,8 @@
 package abby.finalproject_abbylcassien1.Load;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -25,6 +27,7 @@ public class AddClothes extends AppCompatActivity {
     private EditText clothNameEditText;
     private EditText clothInfoEditText;
 
+    private ImageView image;
     private CheckBox checkboxTop;
     private CheckBox checkboxBottom;
     private CheckBox checkboxShoes;
@@ -35,6 +38,18 @@ public class AddClothes extends AppCompatActivity {
     private CheckBox checkboxCasual;
     private CheckBox checkboxBusiness;
     private CheckBox checkboxNightOut;
+
+    private boolean t;
+    private boolean b;
+    private boolean s;
+    private boolean a;
+    private boolean j;
+    private boolean o;
+    private boolean c;
+    private boolean bu;
+    private boolean n;
+
+    private String imageString;
 
 
     @Override
@@ -55,14 +70,22 @@ public class AddClothes extends AppCompatActivity {
         checkboxBusiness = (CheckBox) findViewById(R.id.checkboxBusiness);
         checkboxNightOut = (CheckBox) findViewById(R.id.checkboxNightOut);
 
-        Clothing clothing;
-
+//
         Intent intent = getIntent();
-        int drawableId = intent.getIntExtra(Load.EXTRA_IMAGE, 0);
+        imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
 
-        ImageView image = (ImageView) findViewById(R.id.addedImage);
-        image.setImageResource(drawableId);
+        image = (ImageView) findViewById(R.id.addedImage);
+//        image.setImageResource(drawableId);
 
+        t = checkboxTop.isChecked();
+        b = checkboxBottom.isChecked();
+        s = checkboxShoes.isChecked();
+        a = checkboxAccessories.isChecked();
+        j = checkboxJackets.isChecked();
+        o = checkboxOthers.isChecked();
+        c = checkboxCasual.isChecked();
+        bu = checkboxBusiness.isChecked();
+        n = checkboxNightOut.isChecked();
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
@@ -83,16 +106,45 @@ public class AddClothes extends AppCompatActivity {
         };
     }
 
-    boolean t = checkboxTop.isChecked();
-    boolean b = checkboxBottom.isChecked();
-    boolean s = checkboxShoes.isChecked();
-    boolean a = checkboxAccessories.isChecked();
-    boolean j = checkboxJackets.isChecked();
-    boolean o = checkboxOthers.isChecked();
-    boolean c = checkboxCasual.isChecked();
-    boolean bu = checkboxBusiness.isChecked();
-    boolean n = checkboxNightOut.isChecked();
+    private void setPic() {
+        int targetW = image.getWidth();
+        int targetH = image.getHeight();
 
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        bmOptions.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(imageString, bmOptions);
+        int photoW = bmOptions.outWidth;
+        int photoH = bmOptions.outHeight;
+
+        int scalefactor = Math.min(photoW / targetW, photoH / targetH);
+
+        bmOptions.inJustDecodeBounds = false;
+        bmOptions.inSampleSize = scalefactor;
+
+        Bitmap bitmap = BitmapFactory.decodeFile(imageString, bmOptions);
+        image.setImageBitmap(bitmap);
+    }
+//
+//    public void decodeUri(Uri uri) throws FileNotFoundException{
+//        int targetW = imageView.getWidth();
+//        int targetH = imageView.getHeight();
+//
+//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+//
+//        bmOptions.inJustDecodeBounds=true;
+//        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null,bmOptions);
+//        int photoW =bmOptions.outWidth;
+//        int photoH =bmOptions.outHeight;
+//
+//        int scaleFactor = Math.min(photoW/targetW, photoH/targetH );
+//
+//        bmOptions.inJustDecodeBounds=false;
+//        bmOptions.inSampleSize=scaleFactor;
+//
+//        Bitmap image = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
+//        imageView.setImageBitmap(image);
+//
+//    }
 
 
     public void addToCloset(View view) {
@@ -103,8 +155,6 @@ public class AddClothes extends AppCompatActivity {
 
     public void onDataChange(DataSnapshot snapshot) {
     }
-
-
 
 
     @Override

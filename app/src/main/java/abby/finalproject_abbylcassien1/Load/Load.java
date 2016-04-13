@@ -65,7 +65,7 @@ public class Load extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != RESULT_OK)
             return;
-        if (resultCode == Request_TakePhoto) {
+        if (requestCode == Request_TakePhoto) {
 
             Intent intent2 = new Intent(this, AddClothes.class);
             intent2.putExtra(EXTRA_IMAGE, photoFile.getAbsolutePath());
