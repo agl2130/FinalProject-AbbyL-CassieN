@@ -3,13 +3,13 @@ package abby.finalproject_abbylcassien1.outfitoftheday;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
-import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
 
 public class Random extends AppCompatActivity {
@@ -50,14 +50,15 @@ public class Random extends AppCompatActivity {
         Toast.makeText(Random.this, "SURPRISE ME!", Toast.LENGTH_SHORT).show();
     }
 
-    //copy this to all the pages...
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            //this takes you back to home, but it makes you log back in!!!!!
-            case R.id.home:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
             case R.id.log_out:
                 rootRef.unauth();
                 return true;
