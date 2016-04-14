@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.firebase.client.AuthData;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -35,8 +34,8 @@ public class AddClothes extends AppCompatActivity {
 
     private EditText clothNameEditText;
     private EditText clothInfoEditText;
-
     private ImageView image;
+
     private CheckBox checkboxTop;
     private CheckBox checkboxBottom;
     private CheckBox checkboxShoes;
@@ -155,7 +154,7 @@ public class AddClothes extends AppCompatActivity {
 
     public void addToCloset(View view) {
         String byteString = bitmapToByteString(((BitmapDrawable) image.getDrawable()).getBitmap());
-        Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString(), byteString);
+        Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString(), byteString, t, b, s, a, j, o, c, bu, n);
         userRef.child("clothing").push().setValue(clothing);
         finish();
     }
@@ -165,9 +164,6 @@ public class AddClothes extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteStream);
         byte[] byteArray = byteStream.toByteArray();
         return Base64.encodeToString(byteArray, Base64.DEFAULT);
-    }
-
-    public void onDataChange(DataSnapshot snapshot) {
     }
 
 
