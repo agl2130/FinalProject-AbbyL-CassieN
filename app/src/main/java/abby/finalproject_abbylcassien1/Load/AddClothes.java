@@ -103,6 +103,7 @@ public class AddClothes extends AppCompatActivity {
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -114,13 +115,11 @@ public class AddClothes extends AppCompatActivity {
                     // user is not logged in
                     Intent intent = new Intent(AddClothes.this, LoginActivity.class);
                     startActivity(intent);
-
                 }
             }
         };
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-
 
     public void decodeUri(Uri uri) throws FileNotFoundException {
         // Get the dimensions of the View
@@ -175,7 +174,6 @@ public class AddClothes extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         rootRef.removeAuthStateListener(authStateListener);
-
     }
 
     @Override

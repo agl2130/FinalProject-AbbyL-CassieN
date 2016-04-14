@@ -77,7 +77,6 @@ public class Load extends AppCompatActivity {
         }
     }
 
-
     //logging out
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
