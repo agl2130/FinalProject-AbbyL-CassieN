@@ -58,8 +58,7 @@ public class AddClothes extends AppCompatActivity {
     private boolean bu;
     private boolean n;
 
-    private String imageString;
-
+    private Uri imageString;
     private GoogleApiClient client;
 
 
@@ -97,9 +96,9 @@ public class AddClothes extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.addedImage);
 
         try {
-            imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
-            Log.e("get", imageString);
-            decodeUri(Uri.parse(imageString));
+            imageString = intent.getParcelableExtra(Load.EXTRA_IMAGE);
+            Log.e("get", imageString.toString());
+            decodeUri(imageString);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -131,23 +130,23 @@ public class AddClothes extends AppCompatActivity {
 
     public void decodeUri(Uri uri) throws FileNotFoundException {
         // Get the dimensions of the View
-        int targetW = image.getWidth();
-        int targetH = image.getHeight();
-
-        // Get the dimensions of the bitmap
+//        int targetW = image.getWidth();
+//        int targetH = image.getHeight();
+//
+//        // Get the dimensions of the bitmap
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-
-        bmOptions.inJustDecodeBounds = true;
-        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
-        int photoW = bmOptions.outWidth;
-        int photoH = bmOptions.outHeight;
-
-        // Determine how much to scale down the image
-        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
+//
+//        bmOptions.inJustDecodeBounds = true;
+//        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
+//        int photoW = bmOptions.outWidth;
+//        int photoH = bmOptions.outHeight;
+//
+//        // Determine how much to scale down the image
+//        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
 
         // Decode the image file into a Bitmap sized to fill the View
         bmOptions.inJustDecodeBounds = false;
-        bmOptions.inSampleSize = scaleFactor;
+        bmOptions.inSampleSize = 1;
 
         Bitmap image2 = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
         image.setImageBitmap(image2);

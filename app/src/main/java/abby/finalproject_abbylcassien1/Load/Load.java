@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -21,12 +20,11 @@ import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
 
 public class Load extends AppCompatActivity {
+
     private static final int Request_TakePhoto = 1;
     private static final int Request_ImportPhoto = 2;
     public final static String EXTRA_IMAGE = "image";
 
-
-    private ImageView imageView;
     private File photoFile;
     private String imageFileName;
 
@@ -37,7 +35,6 @@ public class Load extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
-
     }
 
     public void takePhoto(View view) {
@@ -72,7 +69,7 @@ public class Load extends AppCompatActivity {
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
         } else if (requestCode == Request_ImportPhoto) {
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, data.getData().toString());
+            intent2.putExtra(EXTRA_IMAGE, data.getData());
             Log.e("pick", data.getData().toString());
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
