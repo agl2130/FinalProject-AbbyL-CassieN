@@ -3,9 +3,11 @@ package abby.finalproject_abbylcassien1.Load;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +18,10 @@ import android.widget.ImageView;
 import com.firebase.client.AuthData;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 
 import abby.finalproject_abbylcassien1.LoginActivity;
@@ -54,6 +59,8 @@ public class AddClothes extends AppCompatActivity {
 
     private String imageString;
 
+    private GoogleApiClient client;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +93,7 @@ public class AddClothes extends AppCompatActivity {
 
         Intent intent = getIntent();
         imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
-        decodeUri(data.getData());
+        // decodeUri(data.getData());
 
 
         image = (ImageView) findViewById(R.id.addedImage);
@@ -111,6 +118,7 @@ public class AddClothes extends AppCompatActivity {
                 }
             }
         };
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
 
@@ -140,9 +148,17 @@ public class AddClothes extends AppCompatActivity {
 
 
     public void addToCloset(View view) {
-        Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString());
+        String byteString = bitmapToByteString(((BitmapDrawable) image.getDrawable()).getBitmap());
+        Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString(), byteString);
         userRef.child("clothing").push().setValue(clothing);
         finish();
+    }
+
+    private String bitmapToByteString(Bitmap bitmap) {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteStream);
+        byte[] byteArray = byteStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
     public void onDataChange(DataSnapshot snapshot) {

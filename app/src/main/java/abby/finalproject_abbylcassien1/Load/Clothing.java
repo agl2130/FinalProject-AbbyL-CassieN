@@ -7,7 +7,7 @@ public class Clothing {
 
     public String name;
     public String info;
-
+    public String photo;
 
     private boolean top;
     private boolean bottom;
@@ -19,22 +19,19 @@ public class Clothing {
     private boolean business;
     private boolean nightOut;
 
-
-    //  public String type;
-    //public String occasion;
-    //public photoId photo;
-
     private Clothing() {
     }
 
-    Clothing(String name, String info) {
+    Clothing(String name, String info, String photo) {
         this.name = name;
         this.info = info;
+        this.photo = photo;
     }
 
-    Clothing(String name, String info, boolean top, boolean bottom, boolean shoes, boolean accessories, boolean jacket, boolean others, boolean casual, boolean business, boolean nightOut) {
+    Clothing(String name, String info, String photo, boolean top, boolean bottom, boolean shoes, boolean accessories, boolean jacket, boolean others, boolean casual, boolean business, boolean nightOut) {
         this.name = name;
         this.info = info;
+        this.photo = photo;
         this.top = top;
         this.bottom = bottom;
         this.shoes = shoes;
