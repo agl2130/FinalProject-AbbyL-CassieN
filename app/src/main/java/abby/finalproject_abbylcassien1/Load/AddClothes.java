@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,11 +93,18 @@ public class AddClothes extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
-        // decodeUri(data.getData());
-
 
         image = (ImageView) findViewById(R.id.addedImage);
+
+        try {
+            imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
+            Log.e("get", imageString);
+            decodeUri(Uri.parse(imageString));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 //        image.setImageResource(drawableId);
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +72,8 @@ public class Load extends AppCompatActivity {
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
         } else if (requestCode == Request_ImportPhoto) {
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, Uri.parse(photoFile.toURI().toString()));
+            intent2.putExtra(EXTRA_IMAGE, data.getData().toString());
+            Log.e("pick", data.getData().toString());
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
         }
