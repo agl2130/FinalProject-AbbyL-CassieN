@@ -29,6 +29,8 @@ public class Load extends AppCompatActivity {
     private File photoFile;
     private String imageFileName;
 
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,6 @@ public class Load extends AppCompatActivity {
         photoFile = createImageFile();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
         startActivityForResult(intent, Request_TakePhoto);
-
     }
 
     private File createImageFile() {
@@ -59,34 +60,25 @@ public class Load extends AppCompatActivity {
         startActivityForResult(intent, Request_ImportPhoto);
     }
 
-    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != RESULT_OK)
             return;
         if (requestCode == Request_TakePhoto) {
-
             Intent intent2 = new Intent(this, AddClothes.class);
             intent2.putExtra(EXTRA_IMAGE, Uri.parse(photoFile.toURI().toString()));
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
-            //           setPic();
         } else if (requestCode == Request_ImportPhoto) {
-//            try{
-//
             Intent intent2 = new Intent(this, AddClothes.class);
             intent2.putExtra(EXTRA_IMAGE, Uri.parse(photoFile.toURI().toString()));
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
-//                   decodeUri(data.getData());
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            }
         }
     }
 
 
+    //logging out
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
