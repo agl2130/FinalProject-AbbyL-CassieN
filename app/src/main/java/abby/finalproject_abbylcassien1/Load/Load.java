@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 import java.io.File;
-import java.net.URI;
 
 import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
@@ -69,7 +68,7 @@ public class Load extends AppCompatActivity {
         if (requestCode == Request_TakePhoto) {
 
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, new URI(photoFile.getAbsolutePath()));
+            intent2.putExtra(EXTRA_IMAGE, Uri.parse(photoFile.toURI().toString()));
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
             //           setPic();
@@ -77,7 +76,7 @@ public class Load extends AppCompatActivity {
 //            try{
 //
             Intent intent2 = new Intent(this, AddClothes.class);
-            intent2.putExtra(EXTRA_IMAGE, photoFile.getAbsolutePath());
+            intent2.putExtra(EXTRA_IMAGE, Uri.parse(photoFile.toURI().toString()));
             startActivity(intent2);
             Toast.makeText(Load.this, "Adding item!", Toast.LENGTH_SHORT).show();
 //                   decodeUri(data.getData());
@@ -87,45 +86,7 @@ public class Load extends AppCompatActivity {
         }
     }
 
-    //    private void setPic() {
-//        int targetW = imageView.getWidth();
-//        int targetH = imageView.getHeight();
-//
-//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//        bmOptions.inJustDecodeBounds = true;
-//        BitmapFactory.decodeFile(photoFile.getAbsolutePath(), bmOptions);
-//        int photoW = bmOptions.outWidth;
-//        int photoH = bmOptions.outHeight;
-//
-//        int scalefactor = Math.min(photoW / targetW, photoH / targetH);
-//
-//        bmOptions.inJustDecodeBounds = false;
-//        bmOptions.inSampleSize = scalefactor;
-//
-//        Bitmap bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath(), bmOptions);
-//        imageView.setImageBitmap(bitmap);
-//    }
-//
-//    public void decodeUri(Uri uri) throws FileNotFoundException{
-//        int targetW = imageView.getWidth();
-//        int targetH = imageView.getHeight();
-//
-//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//
-//        bmOptions.inJustDecodeBounds=true;
-//        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null,bmOptions);
-//        int photoW =bmOptions.outWidth;
-//        int photoH =bmOptions.outHeight;
-//
-//        int scaleFactor = Math.min(photoW/targetW, photoH/targetH );
-//
-//        bmOptions.inJustDecodeBounds=false;
-//        bmOptions.inSampleSize=scaleFactor;
-//
-//        Bitmap image = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
-//        imageView.setImageBitmap(image);
-//
-//    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

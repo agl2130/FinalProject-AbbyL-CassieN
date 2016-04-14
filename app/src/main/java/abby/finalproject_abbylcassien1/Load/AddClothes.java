@@ -3,6 +3,7 @@ package abby.finalproject_abbylcassien1.Load;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -15,6 +16,8 @@ import android.widget.ImageView;
 import com.firebase.client.AuthData;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+
+import java.io.FileNotFoundException;
 
 import abby.finalproject_abbylcassien1.LoginActivity;
 import abby.finalproject_abbylcassien1.R;
@@ -70,13 +73,6 @@ public class AddClothes extends AppCompatActivity {
         checkboxBusiness = (CheckBox) findViewById(R.id.checkboxBusiness);
         checkboxNightOut = (CheckBox) findViewById(R.id.checkboxNightOut);
 
-//
-        Intent intent = getIntent();
-        imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
-
-        image = (ImageView) findViewById(R.id.addedImage);
-//        image.setImageResource(drawableId);
-
         t = checkboxTop.isChecked();
         b = checkboxBottom.isChecked();
         s = checkboxShoes.isChecked();
@@ -86,6 +82,17 @@ public class AddClothes extends AppCompatActivity {
         c = checkboxCasual.isChecked();
         bu = checkboxBusiness.isChecked();
         n = checkboxNightOut.isChecked();
+
+
+        Intent intent = getIntent();
+        imageString = intent.getStringExtra(Load.EXTRA_IMAGE);
+        decodeUri(data.getData());
+
+
+        image = (ImageView) findViewById(R.id.addedImage);
+//        image.setImageResource(drawableId);
+
+
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
@@ -106,45 +113,30 @@ public class AddClothes extends AppCompatActivity {
         };
     }
 
-    private void setPic() {
+
+    public void decodeUri(Uri uri) throws FileNotFoundException {
+        // Get the dimensions of the View
         int targetW = image.getWidth();
         int targetH = image.getHeight();
 
+        // Get the dimensions of the bitmap
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+
         bmOptions.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(imageString, bmOptions);
+        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
         int photoW = bmOptions.outWidth;
         int photoH = bmOptions.outHeight;
 
-        int scalefactor = Math.min(photoW / targetW, photoH / targetH);
+        // Determine how much to scale down the image
+        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
 
+        // Decode the image file into a Bitmap sized to fill the View
         bmOptions.inJustDecodeBounds = false;
-        bmOptions.inSampleSize = scalefactor;
+        bmOptions.inSampleSize = scaleFactor;
 
-        Bitmap bitmap = BitmapFactory.decodeFile(imageString, bmOptions);
-        image.setImageBitmap(bitmap);
+        Bitmap image2 = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
+        image.setImageBitmap(image2);
     }
-//
-//    public void decodeUri(Uri uri) throws FileNotFoundException{
-//        int targetW = imageView.getWidth();
-//        int targetH = imageView.getHeight();
-//
-//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//
-//        bmOptions.inJustDecodeBounds=true;
-//        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null,bmOptions);
-//        int photoW =bmOptions.outWidth;
-//        int photoH =bmOptions.outHeight;
-//
-//        int scaleFactor = Math.min(photoW/targetW, photoH/targetH );
-//
-//        bmOptions.inJustDecodeBounds=false;
-//        bmOptions.inSampleSize=scaleFactor;
-//
-//        Bitmap image = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
-//        imageView.setImageBitmap(image);
-//
-//    }
 
 
     public void addToCloset(View view) {

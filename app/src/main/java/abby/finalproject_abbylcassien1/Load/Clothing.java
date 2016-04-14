@@ -7,6 +7,8 @@ public class Clothing {
 
     public String name;
     public String info;
+
+
     private boolean top;
     private boolean bottom;
     private boolean shoes;
@@ -16,6 +18,7 @@ public class Clothing {
     private boolean casual;
     private boolean business;
     private boolean nightOut;
+
 
     //  public String type;
     //public String occasion;
