@@ -103,19 +103,40 @@ public class AddClothes extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//        image.setImageResource(drawableId);
-
-
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
+//        userRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                if (snapshot.getValue() != null) {
+//                    Clothing clothing = snapshot.getValue(Clothing.class);
+//                    checkboxTop.setChecked(clothing.isTop());
+//                    checkboxBottom.setChecked(clothing.isBottom());
+//                    checkboxShoes.setChecked(clothing.isShoes());
+//                    checkboxAccessories.setChecked(clothing.isAccessories());
+//                    checkboxJackets.setChecked(clothing.isJacket());
+//
+//                    checkboxOthers.setChecked(clothing.isOthers());
+//                    checkboxCasual.setChecked(clothing.isCasual());
+//                    checkboxBusiness.setChecked(clothing.isBusiness());
+//                    checkboxNightOut.setChecked(clothing.isNightOut());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//                System.out.println("The read failed: " + firebaseError.getMessage());
+//            }
+//        });
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
                     // user is logged in
                     userRef = rootRef.child("users/" + authData.getUid());
+
                     return;
                 } else {
                     // user is not logged in
@@ -125,6 +146,8 @@ public class AddClothes extends AppCompatActivity {
             }
         };
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+
     }
 
     public void decodeUri(Uri uri) throws FileNotFoundException {
