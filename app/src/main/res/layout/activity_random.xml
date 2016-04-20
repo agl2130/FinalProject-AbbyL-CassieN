@@ -20,7 +20,7 @@
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/casual1"
+            android:background="@drawable/casual3"
             android:layout_alignParentTop="false"
             android:layout_margin="20dp"
             android:onClick="casual" />
@@ -34,7 +34,7 @@
             android:layout_alignParentTop="false"
             android:layout_alignStart="@+id/button3"
             android:layout_alignTop="@+id/button"
-            android:background="@drawable/business3"
+            android:background="@drawable/business5"
             android:onClick="business" />
 
 
@@ -45,7 +45,7 @@
             android:layout_alignParentTop="false"
             android:layout_alignStart="@+id/button"
             android:layout_below="@+id/button"
-            android:background="@drawable/nightout2"
+            android:background="@drawable/nightout3"
             android:onClick="nightOut" />
 
         <ImageButton
@@ -56,7 +56,7 @@
             android:layout_below="@+id/button"
             android:layout_toEndOf="@+id/button"
             android:layout_toRightOf="@+id/button"
-            android:background="@drawable/surpsriseme2"
+            android:background="@drawable/supriseme3"
             android:onClick="surpriseMe" />
 
     </RelativeLayout>

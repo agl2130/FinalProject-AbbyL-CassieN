@@ -17,7 +17,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.firebase.client.AuthData;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
@@ -107,29 +110,29 @@ public class AddClothes extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
-//        userRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot snapshot) {
-//                if (snapshot.getValue() != null) {
-//                    Clothing clothing = snapshot.getValue(Clothing.class);
-//                    checkboxTop.setChecked(clothing.isTop());
-//                    checkboxBottom.setChecked(clothing.isBottom());
-//                    checkboxShoes.setChecked(clothing.isShoes());
-//                    checkboxAccessories.setChecked(clothing.isAccessories());
-//                    checkboxJackets.setChecked(clothing.isJacket());
-//
-//                    checkboxOthers.setChecked(clothing.isOthers());
-//                    checkboxCasual.setChecked(clothing.isCasual());
-//                    checkboxBusiness.setChecked(clothing.isBusiness());
-//                    checkboxNightOut.setChecked(clothing.isNightOut());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//                System.out.println("The read failed: " + firebaseError.getMessage());
-//            }
-//        });
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.getValue(Clothing.class) != null) {
+                    Clothing clothing = snapshot.getValue(Clothing.class);
+                    checkboxTop.setChecked(clothing.isTop());
+                    checkboxBottom.setChecked(clothing.isBottom());
+                    checkboxShoes.setChecked(clothing.isShoes());
+                    checkboxAccessories.setChecked(clothing.isAccessories());
+                    checkboxJackets.setChecked(clothing.isJacket());
+
+                    checkboxOthers.setChecked(clothing.isOthers());
+                    checkboxCasual.setChecked(clothing.isCasual());
+                    checkboxBusiness.setChecked(clothing.isBusiness());
+                    checkboxNightOut.setChecked(clothing.isNightOut());
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("The read failed: " + firebaseError.getMessage());
+            }
+        });
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
