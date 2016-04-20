@@ -35,7 +35,7 @@ public class Random extends AppCompatActivity {
         Intent intent = new Intent(this, RandomTabActivity.class);
         startActivity(intent);
 
-        Toast.makeText(Random.this, "BUSNESS", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Random.this, "BUSINESS", Toast.LENGTH_SHORT).show();
     }
 
     public void nightOut(View view) {
