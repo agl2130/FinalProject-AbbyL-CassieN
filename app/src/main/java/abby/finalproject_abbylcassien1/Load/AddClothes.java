@@ -79,16 +79,6 @@ public class AddClothes extends AppCompatActivity {
         checkboxBusiness = (CheckBox) findViewById(R.id.checkboxBusiness);
         checkboxNightOut = (CheckBox) findViewById(R.id.checkboxNightOut);
 
-        t = checkboxTop.isChecked();
-        b = checkboxBottom.isChecked();
-        s = checkboxShoes.isChecked();
-        a = checkboxAccessories.isChecked();
-        j = checkboxJackets.isChecked();
-        o = checkboxOthers.isChecked();
-        c = checkboxCasual.isChecked();
-        bu = checkboxBusiness.isChecked();
-        n = checkboxNightOut.isChecked();
-
 
         Intent intent = getIntent();
 
@@ -107,29 +97,6 @@ public class AddClothes extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
-//        userRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot snapshot) {
-//                if (snapshot.getValue(Clothing.class) != null) {
-//                    Clothing clothing = snapshot.getValue(Clothing.class);
-//                    checkboxTop.setChecked(clothing.isTop());
-//                    checkboxBottom.setChecked(clothing.isBottom());
-//                    checkboxShoes.setChecked(clothing.isShoes());
-//                    checkboxAccessories.setChecked(clothing.isAccessories());
-//                    checkboxJackets.setChecked(clothing.isJacket());
-//
-//                    checkboxOthers.setChecked(clothing.isOthers());
-//                    checkboxCasual.setChecked(clothing.isCasual());
-//                    checkboxBusiness.setChecked(clothing.isBusiness());
-//                    checkboxNightOut.setChecked(clothing.isNightOut());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//                System.out.println("The read failed: " + firebaseError.getMessage());
-//            }
-//        });
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -177,6 +144,15 @@ public class AddClothes extends AppCompatActivity {
 
     public void addToCloset(View view) {
         String byteString = bitmapToByteString(((BitmapDrawable) image.getDrawable()).getBitmap());
+        t = checkboxTop.isChecked();
+        b = checkboxBottom.isChecked();
+        s = checkboxShoes.isChecked();
+        a = checkboxAccessories.isChecked();
+        j = checkboxJackets.isChecked();
+        o = checkboxOthers.isChecked();
+        c = checkboxCasual.isChecked();
+        bu = checkboxBusiness.isChecked();
+        n = checkboxNightOut.isChecked();
         Clothing clothing = new Clothing(clothNameEditText.getText().toString(), clothInfoEditText.getText().toString(), byteString, t, b, s, a, j, o, c, bu, n);
         userRef.child("clothing").push().setValue(clothing);
         finish();
