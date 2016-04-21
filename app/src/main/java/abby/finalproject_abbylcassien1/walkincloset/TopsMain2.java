@@ -8,8 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import abby.finalproject_abbylcassien1.MainActivity;
@@ -29,43 +31,41 @@ public class TopsMain2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tops_main2);
 
+        authStateListener = new Firebase.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(AuthData authData) {
+                if (authData != null) {
+                    userRef = rootRef.child("users/" + authData.getUid());
+                    cardAdapter = new CardAdapter(userRef.child("cities"), TopsMain2.this);
+                    recyclerView.setAdapter(cardAdapter);
+                } else {
+                    Intent intent = new Intent(TopsMain2.this, WalkInCloset.class);
+                    startActivity(intent);
+                }
+            }
+        };
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         cardAdapter = new CardAdapter(tops, this);
-        //calling the list of minions, and the context...to randomize.
+        //calling the list of top, and the context.
         recyclerView.setAdapter(cardAdapter);
     }
 
     //the list of all the information
     // ...which is given to the Adapter
     //...which is given to the Recycler View - knows how to populate info
-//    private void initialData() {
-//        tops = new ArrayList<>();
-//
-//
-//            tops.add(new
-//
-//            TopsInCloset("Shirt1","yellow",R.drawable.business4)
-//
-//            );
-//            tops.add(new
-//
-//            TopsInCloset("Shirt2","awesome",R.drawable.business5)
-//
-//            );
-//            tops.add(new
-//
-//            TopsInCloset("Shirt3","orange tye-dye",R.drawable.busness2)
-//
-//            );
-//            tops.add(new
-//
-//            TopsInCloset("Shirt4","fourth",R.drawable.supriseme3)
-//
-//            );
-//        }
+
+
+    private void initialData() {
+        tops = new ArrayList<>();
+        tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
+        tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
+        tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
+        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
+    }
+
 //
 
     //random person generator
