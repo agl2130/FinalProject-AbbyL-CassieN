@@ -6,8 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import abby.finalproject_abbylcassien1.Load.Clothing;
 import abby.finalproject_abbylcassien1.R;
 
 /**
@@ -15,12 +22,44 @@ import abby.finalproject_abbylcassien1.R;
  */
 public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
-    private List<TopsInCloset> tops;
+    private List<Clothing> clothing;
     private Context context;
 
-    public CardAdapter(List<TopsInCloset> tops, Context context) {
-        this.tops = tops;
+    public CardAdapter(Firebase clothingRef, Context context) {
         this.context = context;
+        clothing = new ArrayList<>();
+        clothingRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
+                clothing.add(clothingObject);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
+                clothing.remove(clothingObject);
+                notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
     }
 
     @Override
@@ -31,12 +70,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
     @Override
     public void onBindViewHolder(CardViewHolder holder, int position) {
-        TopsInCloset top = tops.get(position);
-        holder.bind(top);
+        Clothing clothingObject = clothing.get(position);
+        holder.bind(clothingObject);
     }
 
     @Override
     public int getItemCount() {
-        return tops.size();
+        return clothing.size();
     }
 }
