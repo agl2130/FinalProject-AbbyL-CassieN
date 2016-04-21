@@ -8,7 +8,7 @@ public class TopsInCloset {
     public String info;
     public int photo;
 
-    public TopsInCloset(String name, String nickname, int photo) {
+    public TopsInCloset(String name, String info, int photo) {
         this.name = name;
         this.info = info;
         this.photo = photo;

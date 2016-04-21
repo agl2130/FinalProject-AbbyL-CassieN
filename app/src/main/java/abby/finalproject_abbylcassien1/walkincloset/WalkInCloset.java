@@ -1,5 +1,6 @@
 package abby.finalproject_abbylcassien1.walkincloset;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -24,6 +25,8 @@ public class WalkInCloset extends AppCompatActivity {
     }
 
     public void top(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     public void bottom(View view) {

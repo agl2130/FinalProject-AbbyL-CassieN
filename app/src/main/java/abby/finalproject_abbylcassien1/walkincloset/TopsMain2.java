@@ -10,18 +10,14 @@ import java.util.List;
 
 import abby.finalproject_abbylcassien1.R;
 
-/**
- * Created by cassondranealon on 4/20/16.
- */
-public class TopsMain extends AppCompatActivity {
-
+public class TopsMain2 extends AppCompatActivity {
     private List<TopsInCloset> tops;
     private CardAdapter cardAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tops_main2);
 
         initialData();
 
@@ -38,9 +34,9 @@ public class TopsMain extends AppCompatActivity {
     //...which is given to the Recycler View - knows how to populate info
     private void initialData() {
         tops = new ArrayList<>();
-        tops.add(new TopsInCloset("Stuart", "The Musical One", R.drawable.business4));
-        tops.add(new TopsInCloset("Kevin", "The Leader", R.drawable.business5));
-        tops.add(new TopsInCloset("Bob", "The One With the Teddy Bear", R.drawable.busness2));
+        tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
+        tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
+        tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
     }
 
 //    //makes the add button
