@@ -7,12 +7,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
+
 import abby.finalproject_abbylcassien1.R;
 
 /**
  * Created by cassondranealon on 3/30/16.
  */
 public class ViewTop extends FrameLayout {
+
+    private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     private TextView textView;
     private ImageView imageView;
