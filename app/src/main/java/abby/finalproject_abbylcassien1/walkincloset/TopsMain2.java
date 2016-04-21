@@ -37,28 +37,9 @@ public class TopsMain2 extends AppCompatActivity {
         tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
         tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
         tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
+        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
     }
 
-//    //makes the add button
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-
-    //to make the button do something
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch(item.getItemId())
-//        {
-//            case R.id.add:
-//                minions.add(getRandomPerson());
-//                cardAdapter.notifyDataSetChanged();
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
 
     //random person generator
 //    private Person getRandomPerson() {
