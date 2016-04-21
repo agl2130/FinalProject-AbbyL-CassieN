@@ -26,8 +26,8 @@ public class Random extends AppCompatActivity {
 
     public void casual(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
+        boolean isCasual = true;
         startActivity(intent);
-
         Toast.makeText(Random.this, "CASUAL", Toast.LENGTH_SHORT).show();
     }
 

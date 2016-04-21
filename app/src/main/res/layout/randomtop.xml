@@ -10,8 +10,8 @@
         android:layout_height="wrap_content" />
 
     <ImageView
+        android:id="@+id/imageTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/quote" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import abby.finalproject_abbylcassien1.R;
@@ -14,6 +15,7 @@ import abby.finalproject_abbylcassien1.R;
 public class ViewTop extends FrameLayout {
 
     private TextView textView;
+    private ImageView imageView;
 
     public ViewTop(Context context) {
         super(context);
@@ -39,6 +41,9 @@ public class ViewTop extends FrameLayout {
     private void init() {
         inflate(getContext(), R.layout.randomtop, this);
         textView = (TextView) findViewById(R.id.text_top);
+        imageView = (ImageView) findViewById(R.id.imageTop);
         textView.setText("Here is your top!");
+
+
     }
 }
