@@ -11,9 +11,9 @@ import android.view.MenuItem;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import abby.finalproject_abbylcassien1.Load.Clothing;
 import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
 
@@ -22,7 +22,7 @@ public class TopsMain2 extends AppCompatActivity {
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
-    private List<TopsInCloset> tops;
+    private List<Clothing> clothing;
     private CardAdapter cardAdapter;
     private RecyclerView recyclerView;
 
@@ -36,7 +36,7 @@ public class TopsMain2 extends AppCompatActivity {
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
                     userRef = rootRef.child("users/" + authData.getUid());
-                    cardAdapter = new CardAdapter(userRef.child("cities"), TopsMain2.this);
+                    cardAdapter = new CardAdapter(userRef.child("clothing"), TopsMain2.this);
                     recyclerView.setAdapter(cardAdapter);
                 } else {
                     Intent intent = new Intent(TopsMain2.this, WalkInCloset.class);
@@ -48,7 +48,7 @@ public class TopsMain2 extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        cardAdapter = new CardAdapter(tops, this);
+        cardAdapter = new CardAdapter(clothing, this);
         //calling the list of top, and the context.
         recyclerView.setAdapter(cardAdapter);
     }
@@ -58,13 +58,13 @@ public class TopsMain2 extends AppCompatActivity {
     //...which is given to the Recycler View - knows how to populate info
 
 
-    private void initialData() {
-        tops = new ArrayList<>();
-        tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
-        tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
-        tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
-        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
-    }
+//    private void initialData() {
+//        tops = new ArrayList<>();
+//        tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
+//        tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
+//        tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
+//        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
+//    }
 
 //
 
