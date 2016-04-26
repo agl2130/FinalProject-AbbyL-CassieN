@@ -30,18 +30,28 @@ public class WalkInCloset extends AppCompatActivity {
     }
 
     public void bottom(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     public void shoes(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     public void jacket(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     public void access(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     public void other(View view) {
+        Intent intent = new Intent(this, TopsMain2.class);
+        startActivity(intent);
     }
 
     //Log out menu button
