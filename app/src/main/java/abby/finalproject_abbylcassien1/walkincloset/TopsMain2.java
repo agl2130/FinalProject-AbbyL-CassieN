@@ -48,10 +48,22 @@ public class TopsMain2 extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        cardAdapter = new CardAdapter(clothing, this);
-        //calling the list of top, and the context.
-        recyclerView.setAdapter(cardAdapter);
+
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        rootRef.addAuthStateListener(authStateListener);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        rootRef.removeAuthStateListener(authStateListener);
+    }
+
 
     //the list of all the information
     // ...which is given to the Adapter

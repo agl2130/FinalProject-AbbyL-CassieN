@@ -79,4 +79,13 @@ public class Clothing {
     public boolean isNightOut() {
         return nightOut;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Clothing))
+            return false;
+
+        Clothing clothingObject = (Clothing) object;
+        return name.equals(clothingObject.name);
+    }
 }
