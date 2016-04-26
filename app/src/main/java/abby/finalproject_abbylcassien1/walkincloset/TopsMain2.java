@@ -22,7 +22,6 @@ public class TopsMain2 extends AppCompatActivity {
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
-    private List<Clothing> clothing;
     private CardAdapter cardAdapter;
     private RecyclerView recyclerView;
 
