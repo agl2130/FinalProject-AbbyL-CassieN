@@ -78,20 +78,6 @@ public class ClothesViewActivity extends AppCompatActivity {
 //        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
 //    }
 
-//
-
-    //random person generator
-//    private Person getRandomPerson() {
-//        int num = (int) (Math.random() * 3);
-//        if (num ==0) {
-//            return new Person("Stuart", "The Musical One", R.drawable.stuart);
-//        }
-//        else if (num == 1) {
-//            return new Person("Kevin", "The Leader", R.drawable.kevin);
-//        }
-//        else
-//            return new Person("Bob", "The One With the Teddy Bear", R.drawable.bob);
-//    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
