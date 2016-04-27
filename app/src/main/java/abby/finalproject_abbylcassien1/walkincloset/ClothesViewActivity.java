@@ -11,13 +11,10 @@ import android.view.MenuItem;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
-import java.util.List;
-
-import abby.finalproject_abbylcassien1.Load.Clothing;
 import abby.finalproject_abbylcassien1.MainActivity;
 import abby.finalproject_abbylcassien1.R;
 
-public class TopsMain2 extends AppCompatActivity {
+public class ClothesViewActivity extends AppCompatActivity {
 
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
     private Firebase userRef;
@@ -30,15 +27,19 @@ public class TopsMain2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tops_main2);
 
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(WalkInCloset.TYPE);
+        final String type = message;
+
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
                     userRef = rootRef.child("users/" + authData.getUid());
-                    cardAdapter = new CardAdapter(userRef.child("clothing"), TopsMain2.this);
+                    cardAdapter = new CardAdapter(userRef.child("clothing"), ClothesViewActivity.this, type);
                     recyclerView.setAdapter(cardAdapter);
                 } else {
-                    Intent intent = new Intent(TopsMain2.this, WalkInCloset.class);
+                    Intent intent = new Intent(ClothesViewActivity.this, WalkInCloset.class);
                     startActivity(intent);
                 }
             }

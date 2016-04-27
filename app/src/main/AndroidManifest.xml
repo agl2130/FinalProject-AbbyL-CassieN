@@ -46,7 +46,7 @@
         <activity
             android:name=".Load.AddClothes"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".walkincloset.TopsMain2"></activity>
+        <activity android:name=".walkincloset.ClothesViewActivity"></activity>
     </application>
 
 </manifest>

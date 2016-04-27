@@ -12,6 +12,8 @@ import com.firebase.client.Firebase;
 import abby.finalproject_abbylcassien1.R;
 
 public class WalkInCloset extends AppCompatActivity {
+
+    public final static String TYPE = "type";
 //
 //
 //    private List<Clothes> clothes;
@@ -25,32 +27,44 @@ public class WalkInCloset extends AppCompatActivity {
     }
 
     public void top(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "top";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 
     public void bottom(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "bottoms";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 
     public void shoes(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "shoes";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 
     public void jacket(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "jacket";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 
     public void access(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "accessories";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 
     public void other(View view) {
-        Intent intent = new Intent(this, TopsMain2.class);
+        Intent intent = new Intent(this, ClothesViewActivity.class);
+        String message = "other";
+        intent.putExtra(TYPE, message);
         startActivity(intent);
     }
 

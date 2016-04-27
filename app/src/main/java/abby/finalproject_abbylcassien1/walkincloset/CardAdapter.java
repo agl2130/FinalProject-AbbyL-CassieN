@@ -25,15 +25,37 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
     private List<Clothing> clothing;
     private Context context;
 
-    public CardAdapter(Firebase clothingRef, Context context) {
+    public CardAdapter(Firebase clothingRef, Context context, final String type) {
         this.context = context;
         clothing = new ArrayList<>();
         clothingRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
-                clothing.add(clothingObject);
-                notifyDataSetChanged();
+                if (type.equals("top") && clothingObject.isTop()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
+                if (type.equals("bottoms") && clothingObject.isBottom()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
+                if (type.equals("jacket") && clothingObject.isJacket()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
+                if (type.equals("shoes") && clothingObject.isShoes()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
+                if (type.equals("accessories") && clothingObject.isAccessories()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
+                if (type.equals("other") && clothingObject.isOthers()) {
+                    clothing.add(clothingObject);
+                    notifyDataSetChanged();
+                }
             }
 
             @Override
