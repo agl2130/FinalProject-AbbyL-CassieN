@@ -70,13 +70,6 @@ public class ClothesViewActivity extends AppCompatActivity {
     //...which is given to the Recycler View - knows how to populate info
 
 
-//    private void initialData() {
-//        tops = new ArrayList<>();
-//        tops.add(new TopsInCloset("Shirt1", "yellow", R.drawable.business4));
-//        tops.add(new TopsInCloset("Shirt2", "awesome", R.drawable.business5));
-//        tops.add(new TopsInCloset("Shirt3", "orange tye-dye", R.drawable.busness2));
-//        tops.add(new TopsInCloset("Shirt4", "fourth", R.drawable.supriseme3));
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

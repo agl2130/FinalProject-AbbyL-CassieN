@@ -29,6 +29,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
         this.context = context;
         clothing = new ArrayList<>();
         clothingRef.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
