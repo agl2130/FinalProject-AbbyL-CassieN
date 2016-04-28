@@ -29,7 +29,7 @@ public class RandomTabActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_randomtab);
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
-        userRef = rootRef.child("users" + rootRef.getAuth().getUid());
+        userRef = rootRef.child("users/" + rootRef.getAuth().getUid());
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(Random.OCCASION);
@@ -38,7 +38,7 @@ public class RandomTabActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing")));
+        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing"), this));
         tabLayout.setupWithViewPager(viewPager);
     }
 
