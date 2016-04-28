@@ -1,5 +1,6 @@
 package abby.finalproject_abbylcassien1.outfitoftheday;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -19,18 +20,25 @@ public class RandomTabActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Firebase userRef;
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_randomtab);
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
+        userRef = rootRef.child("users" + rootRef.getAuth().getUid());
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(Random.OCCASION);
+        final String occasion = message;
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        viewPager.setAdapter(new TabPagerAdapter());
+        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing")));
         tabLayout.setupWithViewPager(viewPager);
     }
 

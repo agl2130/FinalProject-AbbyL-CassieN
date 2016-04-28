@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.firebase.client.Firebase;
 
+import abby.finalproject_abbylcassien1.Load.Clothing;
 import abby.finalproject_abbylcassien1.R;
 
 /**
@@ -23,30 +24,28 @@ public class ViewTop extends FrameLayout {
 
     public ViewTop(Context context) {
         super(context);
-        init();
     }
 
     public ViewTop(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
     }
 
     public ViewTop(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
     }
 
     @TargetApi(21)
     public ViewTop(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init();
     }
 
-    private void init() {
+    public void init(Clothing clothing) {
         inflate(getContext(), R.layout.randomtop, this);
         textView = (TextView) findViewById(R.id.text_top);
         imageView = (ImageView) findViewById(R.id.imageTop);
-        textView.setText("Here is your top!");
+
+//        imageView.setImageBitmap();
+        textView.setText(clothing.name);
 
 
     }

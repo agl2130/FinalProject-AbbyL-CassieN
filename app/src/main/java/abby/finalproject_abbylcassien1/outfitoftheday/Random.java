@@ -14,6 +14,9 @@ import abby.finalproject_abbylcassien1.R;
 
 public class Random extends AppCompatActivity {
 
+    public final static String OCCASION = "occasion";
+
+
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
@@ -26,20 +29,24 @@ public class Random extends AppCompatActivity {
 
     public void casual(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
-        boolean isCasual = true;
+        String message = "casual";
+        intent.putExtra(OCCASION, message);
         startActivity(intent);
         Toast.makeText(Random.this, "CASUAL", Toast.LENGTH_SHORT).show();
     }
 
     public void business(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
+        String message = "business";
+        intent.putExtra(OCCASION, message);
         startActivity(intent);
-
         Toast.makeText(Random.this, "BUSINESS", Toast.LENGTH_SHORT).show();
     }
 
     public void nightOut(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
+        String message = "nightOut";
+        intent.putExtra(OCCASION, message);
         startActivity(intent);
         Toast.makeText(Random.this, "NIGHT OUT", Toast.LENGTH_SHORT).show();
     }
