@@ -36,6 +36,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(final Clothing clothingObject) {
+
         clothingName.setText(clothingObject.name);
         clothingInfo.setText(clothingObject.info);
         clothingPhoto.setImageBitmap(byteStringToBitmap(clothingObject.photo));
