@@ -31,14 +31,13 @@ public class RandomTabActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
         userRef = rootRef.child("users/" + rootRef.getAuth().getUid());
 
-//        Intent intent = getIntent();
-//        String message = intent.getStringExtra(Random.OCCASION);
-//        final String occasion = message;
+        Intent intent = getIntent();
+        String occasion = intent.getStringExtra(Random.OCCASION);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing"), this));
+        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing"), this, occasion));
         tabLayout.setupWithViewPager(viewPager);
     }
 
