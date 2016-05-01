@@ -51,6 +51,8 @@ public class Random extends AppCompatActivity {
 
     public void surpriseMe(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
+        String message = "random";
+        intent.putExtra(OCCASION, message);
         startActivity(intent);
         Toast.makeText(Random.this, "SURPRISE ME!", Toast.LENGTH_SHORT).show();
     }
