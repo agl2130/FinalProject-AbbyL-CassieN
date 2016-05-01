@@ -44,7 +44,7 @@ public class RandomTabActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_wear_me, menu);
         return true;
     }
 

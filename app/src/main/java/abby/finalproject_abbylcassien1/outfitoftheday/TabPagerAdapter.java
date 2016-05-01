@@ -76,13 +76,10 @@ public class TabPagerAdapter extends PagerAdapter {
                                                       accessories.add(clothingObject);
                                                       viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
                                                   }
-                                                  
                                               }
-
 
                                               @Override
                                               public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
                                               }
 
                                               @Override
@@ -91,17 +88,13 @@ public class TabPagerAdapter extends PagerAdapter {
 
                                               @Override
                                               public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
                                               }
 
                                               @Override
                                               public void onCancelled(FirebaseError firebaseError) {
-
                                               }
                                           }
-
         );
-
     }
 
     @Override
@@ -152,8 +145,7 @@ public class TabPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(final ViewGroup container, final int position,
-                            final Object object) {
+    public void destroyItem(final ViewGroup container, final int position, final Object object) {
         container.removeView((View) object);
     }
 }
