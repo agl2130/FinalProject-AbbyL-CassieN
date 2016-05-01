@@ -33,7 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loadedImage"
-
         />
 
     <TextView
@@ -46,6 +45,14 @@
         android:layout_marginTop="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:id="@+id/loadedClothesInfoText"
+        android:layout_toRightOf="@+id/loadedClothesInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loadedClothesName" />
 
 
     <Button
