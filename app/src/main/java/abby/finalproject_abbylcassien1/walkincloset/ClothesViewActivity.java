@@ -79,7 +79,6 @@ public class ClothesViewActivity extends AppCompatActivity {
         return true;
     }
 
-    //copy this to all the pages...
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
