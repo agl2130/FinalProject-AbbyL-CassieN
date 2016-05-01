@@ -73,4 +73,8 @@ public class Random extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void buildYourOutfit(View view) {
+        Toast.makeText(Random.this, "Lets you build your own outfit", Toast.LENGTH_SHORT).show();
+    }
 }

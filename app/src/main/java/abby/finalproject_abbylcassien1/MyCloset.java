@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -41,9 +42,13 @@ public class MyCloset extends AppCompatActivity {
     }
 
     public void suitcase(View view) {
+        Toast.makeText(MyCloset.this, "Goes to Suitcase", Toast.LENGTH_SHORT).show();
+
     }
 
     public void favorite(View view) {
+        Toast.makeText(MyCloset.this, "Goes to Favorites", Toast.LENGTH_SHORT).show();
+
     }
 
     public void walkIn(View view) {
