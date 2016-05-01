@@ -37,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
 
-//        if (rootRef.getAuth().getProviderData().get("email") != null) {
-//            userName.setText(rootRef.getAuth().getProviderData().get("email").toString());
-//        }
-
         //just in case the user is logged out, do something about it
         authStateListener = new Firebase.AuthStateListener() {
             @Override

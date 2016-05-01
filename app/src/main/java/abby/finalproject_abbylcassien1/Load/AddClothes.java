@@ -113,8 +113,6 @@ public class AddClothes extends AppCompatActivity {
             }
         };
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
-
     }
 
     public void decodeUri(Uri uri) throws FileNotFoundException {

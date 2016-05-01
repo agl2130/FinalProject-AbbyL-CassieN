@@ -20,6 +20,7 @@ import abby.finalproject_abbylcassien1.Load.Clothing;
  */
 public class TabPagerAdapter extends PagerAdapter {
 
+    private final static String RANDOM_IMAGE = "randomImage";
 
     private List<Clothing> tops = new ArrayList<>();
     private List<Clothing> bottoms = new ArrayList<>();
@@ -64,7 +65,6 @@ public class TabPagerAdapter extends PagerAdapter {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
@@ -73,12 +73,10 @@ public class TabPagerAdapter extends PagerAdapter {
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
 
