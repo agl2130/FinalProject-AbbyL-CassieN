@@ -20,7 +20,6 @@ import abby.finalproject_abbylcassien1.Load.Clothing;
  */
 public class TabPagerAdapter extends PagerAdapter {
 
-    private final static String RANDOM_IMAGE = "randomImage";
 
     private List<Clothing> tops = new ArrayList<>();
     private List<Clothing> bottoms = new ArrayList<>();
@@ -40,45 +39,110 @@ public class TabPagerAdapter extends PagerAdapter {
         viewShoes = new ViewShoes(context);
         viewAccessories = new ViewAccessories(context);
 
+
         clothingRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
-                if (clothingObject.isTop()) {
-                    tops.add(clothingObject);
-                    viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                if (clothingObject.isCasual()) {
+                    if (clothingObject.isTop()) {
+                        tops.add(clothingObject);
+                        viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                    }
+                    if (clothingObject.isBottom()) {
+                        bottoms.add(clothingObject);
+                        viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                    }
+
+                    if (clothingObject.isShoes()) {
+                        shoes.add(clothingObject);
+                        viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                    }
+                    if (clothingObject.isAccessories()) {
+                        accessories.add(clothingObject);
+                        viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+                    }
                 }
-                if (clothingObject.isBottom()) {
-                    bottoms.add(clothingObject);
-                    viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                if (clothingObject.isBusiness()) {
+                    if (clothingObject.isTop()) {
+                        tops.add(clothingObject);
+                        viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                    }
+                    if (clothingObject.isBottom()) {
+                        bottoms.add(clothingObject);
+                        viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                    }
+
+                    if (clothingObject.isShoes()) {
+                        shoes.add(clothingObject);
+                        viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                    }
+                    if (clothingObject.isAccessories()) {
+                        accessories.add(clothingObject);
+                        viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+                    }
+                }
+                if (clothingObject.isNightOut()) {
+                    if (clothingObject.isTop()) {
+                        tops.add(clothingObject);
+                        viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                    }
+                    if (clothingObject.isBottom()) {
+                        bottoms.add(clothingObject);
+                        viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                    }
+
+                    if (clothingObject.isShoes()) {
+                        shoes.add(clothingObject);
+                        viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                    }
+                    if (clothingObject.isAccessories()) {
+                        accessories.add(clothingObject);
+                        viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+                    }
+                } else {
+                    if (clothingObject.isTop()) {
+                        tops.add(clothingObject);
+                        viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                    }
+                    if (clothingObject.isBottom()) {
+                        bottoms.add(clothingObject);
+                        viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                    }
+
+                    if (clothingObject.isShoes()) {
+                        shoes.add(clothingObject);
+                        viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                    }
+                    if (clothingObject.isAccessories()) {
+                        accessories.add(clothingObject);
+                        viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+                    }
+                }
+            }
+
+
+                                              @Override
+                                              public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
                 }
 
-                if (clothingObject.isShoes()) {
-                    shoes.add(clothingObject);
-                    viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                                              @Override
+                                              public void onChildRemoved(DataSnapshot dataSnapshot) {
                 }
-                if (clothingObject.isAccessories()) {
-                    accessories.add(clothingObject);
-                    viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+
+                                              @Override
+                                              public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
                 }
+
+                                              @Override
+                                              public void onCancelled(FirebaseError firebaseError) {
+
+                                              }
             }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-            }
-        });
+        );
 
     }
 
@@ -99,7 +163,7 @@ public class TabPagerAdapter extends PagerAdapter {
                 return "SHOES";
             case 3:
                 return "ACCESSORIES";
-        }
+            }
         return null;
     }
 
@@ -119,7 +183,7 @@ public class TabPagerAdapter extends PagerAdapter {
                 container.addView(viewAccessories);
                 return viewAccessories;
             default:
-        }
+            }
         return null;
     }
 
@@ -127,10 +191,11 @@ public class TabPagerAdapter extends PagerAdapter {
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
-    }
+        }
 
     @Override
-    public void destroyItem(final ViewGroup container, final int position, final Object object) {
+    public void destroyItem(final ViewGroup container, final int position,
+                            final Object object) {
         container.removeView((View) object);
+        }
     }
-}
