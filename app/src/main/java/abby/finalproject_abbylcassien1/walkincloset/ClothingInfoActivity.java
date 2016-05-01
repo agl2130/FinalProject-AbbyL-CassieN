@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -77,17 +78,18 @@ public class ClothingInfoActivity extends AppCompatActivity {
     }
 
     public void addtoFavorite(View view) {
+        Toast.makeText(ClothingInfoActivity.this, "Adds to Favorites", Toast.LENGTH_SHORT).show();
     }
 
     public void addtoSuitcase(View view) {
+        Toast.makeText(ClothingInfoActivity.this, "Adds to Suitcase", Toast.LENGTH_SHORT).show();
     }
 
     public void delete(View view) {
-        userRef.child("clothing").child(imageFileName).getValue();
-        userRef.child("clothing").child(imageFileName).removeValue();
-        Intent intent = new Intent(this, WalkInCloset.class);
-        startActivity(intent);
-
+        Toast.makeText(ClothingInfoActivity.this, "Deletes the Item", Toast.LENGTH_SHORT).show();
+//        userRef.child("clothing").child(imageFileName).removeValue();
+//        Intent intent = new Intent(this, WalkInCloset.class);
+//        startActivity(intent);
     }
 
 
