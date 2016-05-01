@@ -26,6 +26,8 @@ public class ClothesViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tops_main2);
+        getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
+
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(WalkInCloset.TYPE);

@@ -44,6 +44,8 @@ public class TabPagerAdapter extends PagerAdapter {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
+
+
                 if (clothingObject.isCasual()) {
                     if (clothingObject.isTop()) {
                         tops.add(clothingObject);

@@ -11,18 +11,7 @@
     android:background="@android:color/black"
     tools:context="abby.finalproject_abbylcassien1.MainActivity">
 
-    <ImageView
-        android:id="@+id/userPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/userName"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/userPic"
-        android:text="username" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
