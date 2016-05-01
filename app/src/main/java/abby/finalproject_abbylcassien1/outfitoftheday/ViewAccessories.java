@@ -22,6 +22,7 @@ public class ViewAccessories extends FrameLayout {
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     private TextView textView;
+    private TextView textViewInfo;
     private ImageView imageView;
 
     public ViewAccessories(Context context) {
@@ -44,9 +45,12 @@ public class ViewAccessories extends FrameLayout {
     public void init(Clothing clothing) {
         inflate(getContext(), R.layout.randomaccessories, this);
         textView = (TextView) findViewById(R.id.text_accessories);
+        textViewInfo = (TextView) findViewById(R.id.accessories_info);
         imageView = (ImageView) findViewById(R.id.imageAccessories);
+
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
+        textViewInfo.setText(clothing.info);
 
 
     }
