@@ -67,7 +67,7 @@ public class ClothingInfoActivity extends AppCompatActivity {
 //        userRef.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {
-//                imageFileName = dataSnapshot.getValue())
+//                fileName = dataSnapshot.getValue().toString();
 //            }
 //
 //            @Override

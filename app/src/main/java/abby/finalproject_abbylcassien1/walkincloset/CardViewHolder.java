@@ -24,6 +24,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     private TextView clothingName;
     private TextView clothingInfo;
     private ImageView clothingPhoto;
+    private String clothingFilename;
     private Context context;
 
     public CardViewHolder(View itemView, Context context) {
@@ -36,7 +37,6 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(final Clothing clothingObject) {
-
         clothingName.setText(clothingObject.name);
         clothingInfo.setText(clothingObject.info);
         clothingPhoto.setImageBitmap(byteStringToBitmap(clothingObject.photo));
