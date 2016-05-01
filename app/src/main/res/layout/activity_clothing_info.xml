@@ -29,11 +29,12 @@
     <TextView
         android:textColor="@android:color/white"
         android:id="@+id/loadedClothesNameText"
+        android:textSize="25sp"
         android:layout_toRightOf="@+id/loadedClothesName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loadedImage"
-        />
+        android:layout_above="@+id/loadedClothesInfo" />
 
     <TextView
         android:textColor="@android:color/white"
@@ -49,10 +50,14 @@
     <TextView
         android:textColor="@android:color/white"
         android:id="@+id/loadedClothesInfoText"
-        android:layout_toRightOf="@+id/loadedClothesInfo"
+        android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loadedClothesName" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/loadedClothesInfo"
+        android:layout_toRightOf="@+id/loadedClothesInfo"
+        android:layout_toEndOf="@+id/loadedClothesInfo" />
 
 
     <Button
