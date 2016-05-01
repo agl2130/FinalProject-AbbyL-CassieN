@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
-import abby.finalproject_abbylcassien1.MainActivity;
+import abby.finalproject_abbylcassien1.CalendarActivity;
 import abby.finalproject_abbylcassien1.R;
 
 public class ClothesViewActivity extends AppCompatActivity {
@@ -82,10 +82,10 @@ public class ClothesViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            //this takes you back to home, but it makes you log back in!!!!!
-            case R.id.home:
-                Intent intent = new Intent(this, MainActivity.class);
+            case R.id.calendar:
+                Intent intent = new Intent(this, CalendarActivity.class);
                 startActivity(intent);
+                return true;
             case R.id.log_out:
                 rootRef.unauth();
                 return true;

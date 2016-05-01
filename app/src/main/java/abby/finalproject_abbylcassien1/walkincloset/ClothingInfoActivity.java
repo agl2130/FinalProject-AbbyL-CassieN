@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
+import abby.finalproject_abbylcassien1.CalendarActivity;
 import abby.finalproject_abbylcassien1.LoginActivity;
 import abby.finalproject_abbylcassien1.R;
 
@@ -115,10 +116,13 @@ public class ClothingInfoActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.calendar:
+                Intent intent = new Intent(this, CalendarActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.log_out:
                 rootRef.unauth();
                 return true;

@@ -24,6 +24,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 
+import abby.finalproject_abbylcassien1.CalendarActivity;
 import abby.finalproject_abbylcassien1.LoginActivity;
 import abby.finalproject_abbylcassien1.R;
 
@@ -172,6 +173,10 @@ public class AddClothes extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.calendar:
+                Intent intent = new Intent(this, CalendarActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.log_out:
                 rootRef.unauth();
                 return true;

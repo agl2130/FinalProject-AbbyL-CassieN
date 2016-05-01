@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.calendar:
+                Intent intent = new Intent(this, CalendarActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.log_out:
                 rootRef.unauth();
                 return true;

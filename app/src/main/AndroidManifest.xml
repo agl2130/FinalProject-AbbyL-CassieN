@@ -26,47 +26,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".LoginActivity" />
-
-
         <activity
             android:name=".outfitoftheday.Random"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".Load.Load"
             android:icon="@android:drawable/ic_menu_call"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".MyCloset"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".walkincloset.WalkInCloset"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".outfitoftheday.RandomTabActivity"
             android:parentActivityName=".MainActivity" />
-
+        <activity
+            android:name=".CalendarActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".walkincloset.ClothesViewActivity"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".Load.AddClothes"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".walkincloset.ClothingInfoActivity"
             android:parentActivityName=".MainActivity" />
 
-        <activity android:name=".outfitoftheday.ViewWearMe">
-
-        </activity>
     </application>
 
 </manifest>
