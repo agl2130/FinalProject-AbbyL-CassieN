@@ -2,7 +2,10 @@ package abby.finalproject_abbylcassien1.outfitoftheday;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
+import android.util.Base64;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,8 +45,14 @@ public class ViewBottom extends FrameLayout {
         inflate(getContext(), R.layout.randombottom, this);
         textView = (TextView) findViewById(R.id.text_bottom);
         imageView = (ImageView) findViewById(R.id.imageBottom);
-        //      imageView.setImageBitmap();
-
+        imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
+
+
+    }
+
+    private Bitmap byteStringToBitmap(String byteString) {
+        byte[] imageAsBytes = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
     }
 }

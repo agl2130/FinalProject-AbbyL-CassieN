@@ -59,16 +59,3 @@ public class RandomTabActivity extends AppCompatActivity {
         }
     }
 }
-
-//random  generator
-//    private Person getRandomPerson() {
-//        int num = (int) (Math.random() * 3);
-//        if (num ==0) {
-//            return new Person("Stuart", "The Musical One", R.drawable.stuart);
-//        }
-//        else if (num == 1) {
-//            return new Person("Kevin", "The Leader", R.drawable.kevin);
-//        }
-//        else
-//            return new Person("Bob", "The One With the Teddy Bear", R.drawable.bob);
-//    }
