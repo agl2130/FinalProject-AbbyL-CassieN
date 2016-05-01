@@ -16,7 +16,6 @@ public class Random extends AppCompatActivity {
 
     public final static String OCCASION = "occasion";
 
-
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override
@@ -25,7 +24,6 @@ public class Random extends AppCompatActivity {
         setContentView(R.layout.activity_random);
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
     }
-//all are going to the same place right now
 
     public void casual(View view) {
         Intent intent = new Intent(this, RandomTabActivity.class);
