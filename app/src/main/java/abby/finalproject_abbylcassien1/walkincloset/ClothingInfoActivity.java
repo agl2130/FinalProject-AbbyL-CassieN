@@ -32,12 +32,13 @@ public class ClothingInfoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getStringExtra(BundleKey.NAME);
         info = intent.getStringExtra(BundleKey.INFO);
+        photo = intent.getStringExtra(BundleKey.PHOTO);
         textView = (TextView) findViewById(R.id.loadedClothesNameText);
         textViewInfo = (TextView) findViewById(R.id.loadedClothesInfoText);
         textView.setText(name);
         textViewInfo.setText(info);
         imageView = (ImageView) findViewById(R.id.loadedImage);
-        imageView.setImageBitmap(byteStringToBitmap(BundleKey.PHOTO));
+        imageView.setImageBitmap(byteStringToBitmap(photo));
 
 
 
