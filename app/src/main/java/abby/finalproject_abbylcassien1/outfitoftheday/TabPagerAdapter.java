@@ -44,6 +44,38 @@ public class TabPagerAdapter extends PagerAdapter {
                                               @Override
                                               public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                                                   Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
+                                                  boolean occasionBool;
+                                                  switch (occasion) {
+                                                      case "casual":
+                                                          occasionBool = clothingObject.isCasual();
+                                                          break;
+                                                      case "business":
+                                                          occasionBool = clothingObject.isBusiness();
+                                                          break;
+                                                      case "nightOut":
+                                                          occasionBool = clothingObject.isNightOut();
+                                                          break;
+                                                      default:
+                                                          occasionBool = true;
+                                                  }
+                                                  if (clothingObject.isTop() && occasionBool) {
+                                                      tops.add(clothingObject);
+                                                      viewTop.init(tops.get((int) (tops.size() * Math.random())));
+                                                  }
+                                                  if (clothingObject.isBottom() && occasionBool) {
+                                                      bottoms.add(clothingObject);
+                                                      viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+                                                  }
+
+                                                  if (clothingObject.isShoes() && occasionBool) {
+                                                      shoes.add(clothingObject);
+                                                      viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+                                                  }
+
+                                                  if (clothingObject.isAccessories() && occasionBool) {
+                                                      accessories.add(clothingObject);
+                                                      viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+                                                  }
 
 
 //                                                  if (clothingObject.isCasual()) {
