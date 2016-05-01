@@ -33,7 +33,7 @@ public class TabPagerAdapter extends PagerAdapter {
     private Clothing pickedTop;
 
 
-    public TabPagerAdapter(Firebase clothingRef, Context context) {
+    public TabPagerAdapter(Firebase clothingRef, Context context, final String occasion) {
         viewTop = new ViewTop(context);
         viewBottom = new ViewBottom(context);
         viewShoes = new ViewShoes(context);
@@ -46,81 +46,81 @@ public class TabPagerAdapter extends PagerAdapter {
                                                   Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
 
 
-                                                  if (clothingObject.isCasual()) {
-                                                      if (clothingObject.isTop()) {
-                                                          tops.add(clothingObject);
-                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isBottom()) {
-                                                          bottoms.add(clothingObject);
-                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
-                                                      }
-
-                                                      if (clothingObject.isShoes()) {
-                                                          shoes.add(clothingObject);
-                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isAccessories()) {
-                                                          accessories.add(clothingObject);
-                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
-                                                      }
-                                                  }
-                                                  if (clothingObject.isBusiness()) {
-                                                      if (clothingObject.isTop()) {
-                                                          tops.add(clothingObject);
-                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isBottom()) {
-                                                          bottoms.add(clothingObject);
-                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
-                                                      }
-
-                                                      if (clothingObject.isShoes()) {
-                                                          shoes.add(clothingObject);
-                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isAccessories()) {
-                                                          accessories.add(clothingObject);
-                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
-                                                      }
-                                                  }
-                                                  if (clothingObject.isNightOut()) {
-                                                      if (clothingObject.isTop()) {
-                                                          tops.add(clothingObject);
-                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isBottom()) {
-                                                          bottoms.add(clothingObject);
-                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
-                                                      }
-
-                                                      if (clothingObject.isShoes()) {
-                                                          shoes.add(clothingObject);
-                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isAccessories()) {
-                                                          accessories.add(clothingObject);
-                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
-                                                      }
-                                                  } else {
-                                                      if (clothingObject.isTop()) {
-                                                          tops.add(clothingObject);
-                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isBottom()) {
-                                                          bottoms.add(clothingObject);
-                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
-                                                      }
-
-                                                      if (clothingObject.isShoes()) {
-                                                          shoes.add(clothingObject);
-                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
-                                                      }
-                                                      if (clothingObject.isAccessories()) {
-                                                          accessories.add(clothingObject);
-                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
-                                                      }
-                                                  }
+//                                                  if (clothingObject.isCasual()) {
+//                                                      if (clothingObject.isTop()) {
+//                                                          tops.add(clothingObject);
+//                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isBottom()) {
+//                                                          bottoms.add(clothingObject);
+//                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+//                                                      }
+//
+//                                                      if (clothingObject.isShoes()) {
+//                                                          shoes.add(clothingObject);
+//                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isAccessories()) {
+//                                                          accessories.add(clothingObject);
+//                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+//                                                      }
+//                                                  }
+//                                                  if (clothingObject.isBusiness()) {
+//                                                      if (clothingObject.isTop()) {
+//                                                          tops.add(clothingObject);
+//                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isBottom()) {
+//                                                          bottoms.add(clothingObject);
+//                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+//                                                      }
+//
+//                                                      if (clothingObject.isShoes()) {
+//                                                          shoes.add(clothingObject);
+//                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isAccessories()) {
+//                                                          accessories.add(clothingObject);
+//                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+//                                                      }
+//                                                  }
+//                                                  if (clothingObject.isNightOut()) {
+//                                                      if (clothingObject.isTop()) {
+//                                                          tops.add(clothingObject);
+//                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isBottom()) {
+//                                                          bottoms.add(clothingObject);
+//                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+//                                                      }
+//
+//                                                      if (clothingObject.isShoes()) {
+//                                                          shoes.add(clothingObject);
+//                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isAccessories()) {
+//                                                          accessories.add(clothingObject);
+//                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+//                                                      }
+//                                                  } else {
+//                                                      if (clothingObject.isTop()) {
+//                                                          tops.add(clothingObject);
+//                                                          viewTop.init(tops.get((int) (tops.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isBottom()) {
+//                                                          bottoms.add(clothingObject);
+//                                                          viewBottom.init(bottoms.get((int) (bottoms.size() * Math.random())));
+//                                                      }
+//
+//                                                      if (clothingObject.isShoes()) {
+//                                                          shoes.add(clothingObject);
+//                                                          viewShoes.init(shoes.get((int) (shoes.size() * Math.random())));
+//                                                      }
+//                                                      if (clothingObject.isAccessories()) {
+//                                                          accessories.add(clothingObject);
+//                                                          viewAccessories.init(accessories.get((int) (accessories.size() * Math.random())));
+//                                                      }
+//                                                  }
                                               }
 
 

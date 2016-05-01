@@ -1,5 +1,6 @@
 package abby.finalproject_abbylcassien1.outfitoftheday;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -31,10 +32,13 @@ public class RandomTabActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.btn_star);
         userRef = rootRef.child("users/" + rootRef.getAuth().getUid());
 
+        Intent intent = getIntent();
+        String occasion = intent.getStringExtra(Random.OCCASION);
+
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing"), this));
+        viewPager.setAdapter(new TabPagerAdapter(userRef.child("clothing"), this, occasion));
         tabLayout.setupWithViewPager(viewPager);
     }
 
