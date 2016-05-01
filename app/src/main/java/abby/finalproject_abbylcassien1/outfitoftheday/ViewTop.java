@@ -23,6 +23,7 @@ public class ViewTop extends FrameLayout {
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     private TextView textView;
+    private TextView textViewInfo;
     private ImageView imageView;
 
     public ViewTop(Context context) {
@@ -45,10 +46,12 @@ public class ViewTop extends FrameLayout {
     public void init(Clothing clothing) {
         inflate(getContext(), R.layout.randomtop, this);
         textView = (TextView) findViewById(R.id.text_top);
+        textViewInfo = (TextView) findViewById(R.id.top_info);
         imageView = (ImageView) findViewById(R.id.imageTop);
 
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
+        textViewInfo.setText(clothing.info);
 
 
     }

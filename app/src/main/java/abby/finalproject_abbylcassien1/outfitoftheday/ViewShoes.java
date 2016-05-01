@@ -22,6 +22,7 @@ public class ViewShoes extends FrameLayout {
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     private TextView textView;
+    private TextView textViewInfo;
     private ImageView imageView;
 
 
@@ -45,9 +46,12 @@ public class ViewShoes extends FrameLayout {
     public void init(Clothing clothing) {
         inflate(getContext(), R.layout.randomshoes, this);
         textView = (TextView) findViewById(R.id.text_shoes);
+        textViewInfo = (TextView) findViewById(R.id.shoes_info);
         imageView = (ImageView) findViewById(R.id.imageShoes);
+
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
+        textViewInfo.setText(clothing.info);
 
 
     }
