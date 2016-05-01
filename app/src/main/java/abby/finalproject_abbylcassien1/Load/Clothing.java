@@ -22,6 +22,11 @@ public class Clothing {
     private Clothing() {
     }
 
+    Clothing(String name, String info) {
+        this.name = name;
+        this.info = info;
+    }
+
     Clothing(String name, String info, String photo) {
         this.name = name;
         this.info = info;

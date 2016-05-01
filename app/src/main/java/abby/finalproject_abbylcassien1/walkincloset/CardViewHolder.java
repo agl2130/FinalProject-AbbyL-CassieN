@@ -44,6 +44,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Toast.makeText(context, clothingName.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, ClothingInfoActivity.class);
+
                 intent.putExtra(BundleKey.NAME, clothingObject.name);
                 intent.putExtra(BundleKey.INFO, clothingObject.info);
                 intent.putExtra(BundleKey.PHOTO, clothingObject.photo);

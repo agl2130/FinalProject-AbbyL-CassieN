@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".Load.AddClothes">
+    tools:context=".walkincloset.ClothingInfoActivity">
 
     <ImageView
         android:layout_marginBottom="10dp"
@@ -78,7 +78,19 @@
         android:layout_width="200dp"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:id="@+id/addtosuitcase"
+        android:text="Add to Suitcase"
+        android:onClick="addtoSuitcase" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:layout_below="@+id/addtosuitcase"
+        android:layout_width="200dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteButton"
+        android:text="Delete Item"
         android:onClick="delete" />
 
 </RelativeLayout>
