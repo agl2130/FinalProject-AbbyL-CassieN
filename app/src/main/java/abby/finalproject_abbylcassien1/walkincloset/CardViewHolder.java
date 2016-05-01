@@ -1,6 +1,7 @@
 package abby.finalproject_abbylcassien1.walkincloset;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
@@ -34,7 +35,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
     }
 
-    public void bind(Clothing clothingObject) {
+    public void bind(final Clothing clothingObject) {
         clothingName.setText(clothingObject.name);
         clothingInfo.setText(clothingObject.info);
         clothingPhoto.setImageBitmap(byteStringToBitmap(clothingObject.photo));
@@ -42,6 +43,11 @@ public class CardViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, clothingName.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ClothingInfoActivity.class);
+                intent.putExtra(BundleKey.NAME, clothingObject.name);
+                intent.putExtra(BundleKey.INFO, clothingObject.info);
+                intent.putExtra(BundleKey.PHOTO, clothingObject.photo);
+                context.startActivity(intent);
             }
         });
     }
