@@ -30,10 +30,8 @@ public class MyCloset extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
-                    //user information and their id numbers
                     userRef = rootRef.child("users/" + authData.getUid());
                 } else {
-                    //otherwise...sorry you have to log in before you can come back
                     Intent intent = new Intent(MyCloset.this, LoginActivity.class);
                     startActivity(intent);
                 }
