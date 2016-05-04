@@ -19,8 +19,6 @@ public class Clothing {
     private boolean business;
     private boolean nightOut;
 
-    private Clothing() {
-    }
 
     Clothing(String name, String info) {
         this.name = name;
@@ -56,7 +54,6 @@ public class Clothing {
         return bottom;
     }
 
-
     public boolean isShoes() {
         return shoes;
     }
@@ -89,7 +86,6 @@ public class Clothing {
     public boolean equals(Object object) {
         if (!(object instanceof Clothing))
             return false;
-
         Clothing clothingObject = (Clothing) object;
         return name.equals(clothingObject.name);
     }

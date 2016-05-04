@@ -12,6 +12,7 @@ import com.firebase.client.Firebase;
 
 import abby.finalproject_abbylcassien1.CalendarActivity;
 import abby.finalproject_abbylcassien1.R;
+import abby.finalproject_abbylcassien1.walkincloset.WalkInCloset;
 
 public class Random extends AppCompatActivity {
 
@@ -58,6 +59,12 @@ public class Random extends AppCompatActivity {
         Toast.makeText(Random.this, "SURPRISE ME!", Toast.LENGTH_SHORT).show();
     }
 
+    public void buildYourOutfit(View view) {
+        Intent intent = new Intent(this, WalkInCloset.class);
+        startActivity(intent);
+        Toast.makeText(Random.this, "Lets you build your own outfit", Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -79,7 +86,4 @@ public class Random extends AppCompatActivity {
         }
     }
 
-    public void buildYourOutfit(View view) {
-        Toast.makeText(Random.this, "Lets you build your own outfit", Toast.LENGTH_SHORT).show();
-    }
 }

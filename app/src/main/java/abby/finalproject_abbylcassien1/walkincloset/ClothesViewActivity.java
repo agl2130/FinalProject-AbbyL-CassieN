@@ -46,11 +46,9 @@ public class ClothesViewActivity extends AppCompatActivity {
                 }
             }
         };
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
     }
 
     @Override
@@ -59,19 +57,11 @@ public class ClothesViewActivity extends AppCompatActivity {
         rootRef.addAuthStateListener(authStateListener);
     }
 
-
     @Override
     protected void onPause() {
         super.onPause();
         rootRef.removeAuthStateListener(authStateListener);
     }
-
-
-    //the list of all the information
-    // ...which is given to the Adapter
-    //...which is given to the Recycler View - knows how to populate info
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

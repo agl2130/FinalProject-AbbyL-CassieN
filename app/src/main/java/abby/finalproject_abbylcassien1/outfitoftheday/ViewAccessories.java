@@ -51,8 +51,6 @@ public class ViewAccessories extends FrameLayout {
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
         textViewInfo.setText(clothing.info);
-
-
     }
 
     private Bitmap byteStringToBitmap(String byteString) {

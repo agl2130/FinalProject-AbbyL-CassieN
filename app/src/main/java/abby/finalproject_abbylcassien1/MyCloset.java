@@ -43,12 +43,10 @@ public class MyCloset extends AppCompatActivity {
 
     public void suitcase(View view) {
         Toast.makeText(MyCloset.this, "Goes to Suitcase", Toast.LENGTH_SHORT).show();
-
     }
 
     public void favorite(View view) {
         Toast.makeText(MyCloset.this, "Goes to Favorites", Toast.LENGTH_SHORT).show();
-
     }
 
     public void walkIn(View view) {

@@ -76,14 +76,12 @@ public class Load extends AppCompatActivity {
         }
     }
 
-    //logging out
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
-    //copy this to all the pages...
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -98,5 +96,4 @@ public class Load extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

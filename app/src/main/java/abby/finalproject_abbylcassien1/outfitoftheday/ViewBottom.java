@@ -47,11 +47,10 @@ public class ViewBottom extends FrameLayout {
         textView = (TextView) findViewById(R.id.text_bottom);
         textViewInfo = (TextView) findViewById(R.id.bottom_info);
         imageView = (ImageView) findViewById(R.id.imageBottom);
+
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
         textViewInfo.setText(clothing.info);
-
-
     }
 
     private Bitmap byteStringToBitmap(String byteString) {

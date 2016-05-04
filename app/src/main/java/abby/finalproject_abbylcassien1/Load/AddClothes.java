@@ -61,7 +61,6 @@ public class AddClothes extends AppCompatActivity {
     private Uri imageString;
     private GoogleApiClient client;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,9 +79,7 @@ public class AddClothes extends AppCompatActivity {
         checkboxBusiness = (CheckBox) findViewById(R.id.checkboxBusiness);
         checkboxNightOut = (CheckBox) findViewById(R.id.checkboxNightOut);
 
-
         Intent intent = getIntent();
-
         image = (ImageView) findViewById(R.id.addedImage);
 
         try {
@@ -94,7 +91,6 @@ public class AddClothes extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
@@ -102,12 +98,10 @@ public class AddClothes extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
-                    // user is logged in
                     userRef = rootRef.child("users/" + authData.getUid());
 
                     return;
                 } else {
-                    // user is not logged in
                     Intent intent = new Intent(AddClothes.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -117,16 +111,12 @@ public class AddClothes extends AppCompatActivity {
     }
 
     public void decodeUri(Uri uri) throws FileNotFoundException {
-//        // Get the dimensions of the bitmap
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        // Decode the image file into a Bitmap sized to fill the View
         bmOptions.inJustDecodeBounds = false;
         bmOptions.inSampleSize = 1;
-
         Bitmap image2 = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmOptions);
         image.setImageBitmap(image2);
     }
-
 
     public void addToCloset(View view) {
         String byteString = bitmapToByteString(((BitmapDrawable) image.getDrawable()).getBitmap());
@@ -150,7 +140,6 @@ public class AddClothes extends AppCompatActivity {
         byte[] byteArray = byteStream.toByteArray();
         return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
-
 
     @Override
     protected void onResume() {

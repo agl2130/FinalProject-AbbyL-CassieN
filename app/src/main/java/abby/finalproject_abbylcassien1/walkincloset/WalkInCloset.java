@@ -69,7 +69,6 @@ public class WalkInCloset extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Log out menu button
     private Firebase rootRef = new Firebase("https://abbyandcassie.firebaseio.com/");
 
     @Override

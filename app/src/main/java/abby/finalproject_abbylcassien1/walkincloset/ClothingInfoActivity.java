@@ -32,7 +32,6 @@ public class ClothingInfoActivity extends AppCompatActivity {
     private ImageView imageView;
     private String imageFileName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,18 +63,6 @@ public class ClothingInfoActivity extends AppCompatActivity {
                 }
             }
         };
-
-//        userRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                fileName = dataSnapshot.getValue().toString();
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
     }
 
     public void addtoFavorite(View view) {
@@ -88,11 +75,11 @@ public class ClothingInfoActivity extends AppCompatActivity {
 
     public void delete(View view) {
         Toast.makeText(ClothingInfoActivity.this, "Deletes the Item", Toast.LENGTH_SHORT).show();
-//        userRef.child("clothing").child(imageFileName).removeValue();
+//      DELETE FUNCTION
+//      userRef.child("clothing").child(imageFileName).removeValue();
 //        Intent intent = new Intent(this, WalkInCloset.class);
 //        startActivity(intent);
     }
-
 
     private Bitmap byteStringToBitmap(String byteString) {
         byte[] imageAsBytes = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
@@ -113,9 +100,10 @@ public class ClothingInfoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_wear_me, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

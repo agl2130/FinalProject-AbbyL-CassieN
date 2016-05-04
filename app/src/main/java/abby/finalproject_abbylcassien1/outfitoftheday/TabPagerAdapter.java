@@ -98,7 +98,6 @@ public class TabPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    //how many pages you will have
     public int getCount() {
         return 4;
     }

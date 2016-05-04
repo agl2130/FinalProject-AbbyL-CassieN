@@ -25,7 +25,6 @@ public class ViewShoes extends FrameLayout {
     private TextView textViewInfo;
     private ImageView imageView;
 
-
     public ViewShoes(Context context) {
         super(context);
     }
@@ -52,8 +51,6 @@ public class ViewShoes extends FrameLayout {
         imageView.setImageBitmap(byteStringToBitmap(clothing.photo));
         textView.setText(clothing.name);
         textViewInfo.setText(clothing.info);
-
-
     }
 
     private Bitmap byteStringToBitmap(String byteString) {

@@ -61,7 +61,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
@@ -69,17 +68,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> {
                 Clothing clothingObject = dataSnapshot.getValue(Clothing.class);
                 clothing.remove(clothingObject);
                 notifyDataSetChanged();
-
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
 
