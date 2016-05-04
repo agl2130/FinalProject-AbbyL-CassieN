@@ -76,6 +76,7 @@ public class ClothingInfoActivity extends AppCompatActivity {
     public void delete(View view) {
         Toast.makeText(ClothingInfoActivity.this, "Deletes the Item", Toast.LENGTH_SHORT).show();
 //      DELETE FUNCTION
+//        userRef.child("clothing").child(imageFileName).child("key").removeValue();
 //      userRef.child("clothing").child(imageFileName).removeValue();
 //        Intent intent = new Intent(this, WalkInCloset.class);
 //        startActivity(intent);

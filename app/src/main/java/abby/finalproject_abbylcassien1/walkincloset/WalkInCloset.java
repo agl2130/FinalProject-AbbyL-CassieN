@@ -15,10 +15,6 @@ import abby.finalproject_abbylcassien1.R;
 public class WalkInCloset extends AppCompatActivity {
 
     public final static String TYPE = "type";
-//
-//
-//    private List<Clothes> clothes;
-//    private ClothesAdapter clothesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -19,6 +19,9 @@ public class Clothing {
     private boolean business;
     private boolean nightOut;
 
+    Clothing() {
+
+    }
 
     Clothing(String name, String info) {
         this.name = name;
@@ -86,6 +89,7 @@ public class Clothing {
     public boolean equals(Object object) {
         if (!(object instanceof Clothing))
             return false;
+
         Clothing clothingObject = (Clothing) object;
         return name.equals(clothingObject.name);
     }
